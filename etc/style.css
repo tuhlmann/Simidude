@@ -1,0 +1,128 @@
+/*
+------------------------------------------------------------------------
+Name:           Simidude CSS
+Author:         Torsten Uhlmann
+Version:       	1.0
+------------------------------------------------------------------------
+
+Copyright:     (c) 2009 AGYNAMIX Torsten Uhlmann
+
+All rights reserved.
+*/
+
+body {
+	text-align:center;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font: 20px Georgia, serif;
+	color: #960620;
+}
+
+h2 {
+	text-align: center;
+	font: 18px Georgia, serif;	
+}
+
+ul {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+li {
+	list-style-type: none;
+	padding: .3em 0;
+}
+
+table {
+	width: 90%;
+	border-width: 1px;
+	border-style: dashed;
+	border-collapse: collapse;
+}
+
+th {
+	padding: 1em 1em 0.5em 0.5em;
+	border-width: 1px;
+	border-style: dotted;	
+}
+
+td {
+	padding: 1em 1em 0.5em 0.5em;
+	border-width: 1px;
+	border-style: dotted;
+}
+
+.table_even {
+	background-color: #FFFFFF;
+}
+
+.table_odd {
+	background-color: #FBFFDF;	
+}
+
+.table_single {
+	background-color: #F4F5FB;	
+}
+
+.li_even {
+	
+}
+
+.li_odd {
+	
+}
+
+.list_all {
+	
+}
+
+.list_single {
+	text-align: center;
+	
+}
+
+.text_box_single {
+	
+}
+
+.text_box_list {
+	
+}
+
+.file_box_single {
+	
+}
+
+.file_box_list {
+	
+}
+
+.image_box_single {
+	
+}
+
+.image_box_list {
+	
+}
+
+.image_thumb {
+
+}
+
+.image {
+}
+
+a:link, a:visited {
+	text-decoration: none;
+}
+
+img {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #960620;
+	padding: 0.5em;
+
+}

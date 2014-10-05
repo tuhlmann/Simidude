@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<project name="Simidude Build script" default="installer">
+
+	<property name="os"                          value="win32" />
+	<property environment="env" />
+	<property file="localbuild.properties" />
+	<property file="build.properties" />
+	<property name="prj.dir"                     location="${basedir}" />
+	<property name="prj.build.dir"               location="${prj.dir}/build" />
+	<property name="prj.src.dir"                 location="${prj.dir}/src" />
+	<property name="prj.src.java.dir"            location="${prj.dir}/src/java" />
+	<property name="prj.src.test.dir"            location="${prj.dir}/src/test" />
+	<property name="prj.lib.dir"                 location="${prj.dir}/lib" />
+
+	<property name="prj.target.dir"              location="${prj.dir}/target" />
+	<property name="prj.target.classes.java.dir" location="${prj.target.dir}/classes/java" />
+	<property name="prj.target.classes.test.dir" location="${prj.target.dir}/classes/test" />
+
+	<property name="prj.target.dist.base"        location="${prj.target.dir}/distribution" />
+	<property name="prj.target.dist.installer"   location="${prj.target.dist.base}/installer" />
+	<property name="prj.target.dist.dir"         location="${prj.target.dist.base}/${app.name}" />
+	<property name="prj.target.dist.bin.dir"     location="${prj.target.dist.dir}/bin" />
+	<property name="prj.target.dist.lib.dir"     location="${prj.target.dist.dir}/lib" />
+	<property name="prj.target.dist.etc.dir"     location="${prj.target.dist.dir}/etc" />
+
+	<property name="prj.target.osx.name.dir"     value="${app.name}.app" />
+	<property name="prj.target.osx.contents.dir" value="${prj.target.osx.name.dir}/Contents" />
+
+	<property name="prj.target.test.dir"         location="${prj.target.dir}/test" />
+	<property name="prj.target.report.dir"       location="${prj.target.dir}/reports" />
+	<property name="prj.target.junit.dir"        location="${prj.target.report.dir}/junit"/>
+	<property name="prj.target.javadoc.dir"      location="${prj.target.report.dir}/javadoc"/>
+	
+	<path id="build.classpath">
+		<fileset dir="${prj.build.dir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="compile.classpath">
+		<fileset dir="${prj.lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${prj.lib.dir}/not_for_installer">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${prj.lib.dir}/win32">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${prj.lib.dir}/linux_x86">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${prj.lib.dir}/osx_x86">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef resource="proguard/ant/task.properties" classpathref="build.classpath" />
+	<taskdef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="build.classpath"/>
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" classpathref="build.classpath"/>
+	
+	<taskdef name="install4j" classname="com.install4j.Install4JTask" classpath="${install4j.ant.task.path}"/>
+	               
+	<target name="init">
+		<mkdir  dir="${prj.target.dir}"/>
+		<mkdir  dir="${prj.target.dir}/license"/>
+		<mkdir  dir="${prj.target.classes.java.dir}"/>
+		<mkdir  dir="${prj.target.classes.test.dir}"/>
+		<mkdir  dir="${prj.target.dist.dir}"/>
+		<mkdir  dir="${prj.target.dist.bin.dir}"/>
+		<mkdir  dir="${prj.target.dist.lib.dir}"/>
+		<mkdir  dir="${prj.target.dist.etc.dir}"/>
+		<mkdir  dir="${prj.target.test.dir}"/>
+		<mkdir  dir="${prj.target.report.dir}"/>
+	</target>
+
+	<target name="compile" depends="init" description="Compiling Simidude source">
+		<javac srcdir="${prj.src.java.dir}" destdir="${prj.target.classes.java.dir}" 
+               debug="true" deprecation="on" source="1.5" target="1.5">
+			<classpath refid="compile.classpath" />
+		</javac>
+		<copy todir="${prj.target.classes.java.dir}">
+			<fileset dir="${prj.src.java.dir}" excludes="**/*.java,**/package.html"/>
+		</copy>
+	</target>
+
+	<target name="compile-test" depends="init">
+		<javac srcdir="${prj.src.test.dir}" destdir="${prj.target.classes.test.dir}" debug="false" deprecation="on" source="1.5" target="1.5">
+			<classpath refid="compile.classpath" />
+			<classpath refid="build.additional.classpath" />
+			<classpath>
+				<pathelement location="${prj.target.classes.java.dir}"/>
+			</classpath>
+		</javac>
+		<copy todir="${prj.target.classes.test.dir}">
+			<fileset dir="${prj.src.test.dir}">
+				<filename name="**/*.xml"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jar" depends="compile" description="Create Jars" >
+		<jar jarfile="${prj.target.dist.lib.dir}/simidude-naked.jar" basedir="${prj.target.classes.java.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Built-Time" value="${build.time}"/>
+				<attribute name="Main-Class" value="com.agynamix.simidude.Simidude" />
+				<attribute name="Class-Path" value="${lib.project.manifest.classpath}"/>
+				<section name="com.agynamix.simidude">
+					<attribute name="Specification-Title" value="${app.name}"/>
+					<attribute name="Specification-Vendor" value="${app.company.name}"/>
+					<attribute name="Specification-Version" value="${app.version}"/>
+					<attribute name="Implementation-Title" value="${app.name}"/>
+					<attribute name="Implementation-Vendor" value="${app.vendor}"/>
+					<attribute name="Implementation-Version" value="${app.version}"/>
+				</section>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="dist" depends="obfuscate" description="Creating distribution package">
+		<tstamp>
+			<format property="build.time" pattern="yyyy-MM-dd HH:mm:ss" locale="en"/>
+		</tstamp>
+		<copy todir="${prj.target.dist.lib.dir}" failonerror="true">
+			<fileset dir="${prj.lib.dir}">
+				<include name="**/*.jar"/>
+				<include name="**/*.dll"/>
+				<include name="**/*.lic"/>
+			</fileset>
+		</copy>
+		<copy todir="${prj.target.dist.etc.dir}" failonerror="true">
+			<fileset dir="${prj.dir}/etc">
+			</fileset>
+		</copy>
+		<copy todir="${prj.target.dist.dir}/licenses" failonerror="true">
+			<fileset dir="${prj.dir}/doc/licenses">
+			</fileset>
+		</copy>
+		<copy tofile="${prj.target.dist.dir}/licenses/simidude-license.txt" failonerror="true" file="${prj.dir}/etc/license.txt" />
+		<copy todir="${prj.target.dist.dir}" failonerror="true" file="${prj.dir}/doc/Simidude User Manual.pdf" />
+		<!--
+		<svn javahl="false">
+			<wcVersion path="${basedir}" prefix="svn." />
+		</svn>
+		-->
+		<buildnumber file="${prj.build.dir}/etc/build.number"/>
+        <echo file="${prj.target.dist.etc.dir}/appinfo.txt" append="false">Application-Name=${app.name}
+Application-Version=${app.version}
+Application-Years=${app.years}
+Company-Name=${app.company.name}
+Company-Email=${app.company.email}
+Company-WWW=${app.company.www}
+Company-Order-Url=${app.company.order_url}
+Repository-Revision=${svn.revision.max}
+Build-Number=${build.number}        	
+Build-Time=${build.time}  
+        </echo>
+
+		<zip destfile="${prj.target.dist.base}/Simidude-${app.version}-win32.zip" update="false">
+			<zipfileset dir="${prj.target.dist.base}">
+				<include name="Simidude/etc/**"/>
+				<include name="Simidude/lib/*.jar"/>
+				<include name="Simidude/lib/win32/*.jar"/>
+				<exclude name="Simidude/etc/private-key.bin" />
+			</zipfileset>
+		</zip>
+		<zip destfile="${prj.target.dist.base}/Simidude-${app.version}-linux_x86.zip" update="false">
+			<zipfileset dir="${prj.target.dist.base}">
+				<include name="Simidude/etc/**"/>
+				<include name="Simidude/lib/*.jar"/>
+				<include name="Simidude/lib/linux_x86/*.jar"/>
+				<exclude name="Simidude/etc/private-key.bin" />
+			</zipfileset>
+		</zip>
+		<zip destfile="${prj.target.dist.base}/Simidude-${app.version}-osx_x86.zip" update="false">
+			<zipfileset dir="${prj.target.dist.base}">
+				<include name="Simidude/etc/**"/>
+				<include name="Simidude/lib/*.jar"/>
+				<include name="Simidude/lib/osx_x86/*.jar"/>
+				<exclude name="Simidude/etc/private-key.bin" />
+			</zipfileset>
+		</zip>
+	</target>
+
+	<target name="obfuscate" depends="jar">
+		<!--<proguard configuration="${prj.build.dir}/etc/obfuscator.pro"/>-->
+		<copy tofile="${prj.target.dist.lib.dir}/simidude.jar" file="${prj.target.dist.lib.dir}/simidude-naked.jar" />
+		<delete file="${prj.target.dist.lib.dir}/simidude-naked.jar" />
+	</target>
+
+	<target name="osx_bundle" depends="dist">
+		<!-- setup -->
+		<mkdir dir="${prj.target.dist.base}/${prj.target.osx.name.dir}" />
+
+		<!-- build required directory structure -->
+		<mkdir dir="${prj.target.dist.base}/${prj.target.osx.contents.dir}/MacOS" />
+		<mkdir dir="${prj.target.dist.base}/${prj.target.osx.contents.dir}/Resources/Java" />
+
+		<!-- copy resources -->
+		<copy todir="${prj.target.dist.base}/${prj.target.osx.contents.dir}" >
+			<fileset dir="${prj.build.dir}/resources/macosx/">
+				<include name="Info.plist"/>
+				<include name="PkgInfo" />
+			</fileset>
+		</copy>
+		<copy file="${prj.build.dir}/resources/macosx/Simidude.icns" todir="${prj.target.dist.base}/${prj.target.osx.contents.dir}/Resources" />
+		<copy file="${prj.build.dir}/resources/macosx/JavaApplicationStub" todir="${prj.target.dist.base}/${prj.target.osx.contents.dir}/MacOS" />
+
+		<exec executable="chmod">
+			<arg value="755"/>
+			<arg value="${prj.target.dist.base}/${prj.target.osx.contents.dir}/MacOS/JavaApplicationStub"/>
+		</exec>
+
+		<!-- now our compiled app & libs -->
+		<copy todir="${prj.target.dist.base}/${prj.target.osx.contents.dir}/Resources/Java" >
+			<fileset dir="${prj.target.dist.lib.dir}" >
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="installer" depends="dist" description="Create install4j installers">
+      <echo message="Create all installers"/>
+	  <condition property="update.url" value="${update.url.test}" else="${update.url.release}">
+	  	<isset property="build.test"/>
+	  </condition>
+      <install4j projectfile="${prj.build.dir}/etc/installer.install4j" release="${app.version}">
+      	<variable name="APP.VERSION" value="${app.version}"/>
+      	<variable name="Update.Url" value="${update.url}" />
+      </install4j>
+   	  <tstamp>
+		<format property="release.notes.url.year" pattern="yyyy" locale="en"/>
+	  </tstamp>
+	  <property name="release.notes.url" value="http://www.agynamix.de/blog/simidude-${app.version.url}-release-notes/"></property>
+      <xmltask source="${prj.target.dist.installer}/updates.xml" dest="${prj.target.dist.installer}/updates.xml">
+      	<insert path="/updateDescriptor/entry/comment" xml="&lt;![CDATA[
+      		&lt;html&gt;
+      		  &lt;body&gt;
+      			&lt;h3&gt;${app.name} ${app.version} Release Notes&lt;/h3&gt;
+      			&lt;p&gt;For detailed information please see our &lt;a href=&quot;${release.notes.url}&quot;&gt;${app.name} ${app.version} Release Notes&lt;/a&gt; web page.&lt;/p&gt;
+      		  &lt;/body&gt;
+      		&lt;/html&gt;
+      		]]&gt;"/>
+      </xmltask>
+      <echo message="updates.xml file updated" />
+      <echo message="Update-URL: ${update.url}"/>
+	  <echo message="Release Notes URL = ${release.notes.url}" />
+	</target>
+
+	<target name="all" description="Creates installers for all available platforms">
+		<antcall target="dist">
+			<param name="os" value="win32"/>
+			<param name="prj.target.dist.base"        location="${prj.target.dir}/distribution/${os}" />
+			<param name="prj.target.dist.dir"         location="${prj.target.dist.base}/${app.name}" />
+			<param name="prj.target.dist.lib.dir"     location="${prj.target.dist.dir}/lib" />
+			<param name="prj.target.dist.etc.dir"     location="${prj.target.dist.dir}/etc" />
+		</antcall>
+		<antcall target="dist">
+			<param name="os" value="linux_x86"/>
+			<param name="prj.target.dist.base"        location="${prj.target.dir}/distribution/${os}" />
+			<param name="prj.target.dist.dir"         location="${prj.target.dist.base}/${app.name}" />
+			<param name="prj.target.dist.lib.dir"     location="${prj.target.dist.dir}/lib" />
+			<param name="prj.target.dist.etc.dir"     location="${prj.target.dist.dir}/etc" />
+		</antcall>
+		<antcall target="dist">
+			<param name="os" value="osx_x86"/>
+			<param name="prj.target.dist.base"        location="${prj.target.dir}/distribution/${os}" />
+			<param name="prj.target.dist.dir"         location="${prj.target.dist.base}/${app.name}" />
+			<param name="prj.target.dist.lib.dir"     location="${prj.target.dist.dir}/lib" />
+			<param name="prj.target.dist.etc.dir"     location="${prj.target.dist.dir}/etc" />
+		</antcall>
+	</target>
+	
+	<target name="test" depends="compile, compile-test" description="JUnit Tests" >
+		<property name="simidude.home" value="${basedir}"/>
+
+		<junit fork="yes" printsummary="yes" timeout="10000"
+      haltonfailure="no" errorproperty="junit.error" failureproperty="junit.error">
+			<formatter type="xml"/>
+			<classpath>
+				<pathelement location="${prj.target.dist.etc.dir}"/>
+				<path refid="compile.classpath"/>
+				<path refid="build.additional.classpath"/>
+				<pathelement location="${prj.target.classes.test.dir}"/>
+				<pathelement location="${prj.target.classes.java.dir}"/>
+				<pathelement location="${prj.src.test.dir}"/>
+				<pathelement location="etc"/>
+			</classpath>
+			<jvmarg value="-Dsimidude.home=${simidude.home}"/>
+			<batchtest todir="${prj.target.test.dir}" fork="yes">
+				<fileset dir="${prj.target.classes.test.dir}">
+					<include name="**/*Test.class"/>
+					<include name="**/*Tester.class" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<antcall target="test-report" />
+	</target>
+
+	<target name="test-report">
+		<junitreport todir="${prj.target.report.dir}">
+			<fileset dir="${prj.target.test.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" styledir="${prj.build.etc.dir}" todir="${prj.target.junit.dir}"/>
+		</junitreport>
+	</target>
+
+	<target name="javadoc" depends="init" description="Create Javadoc">
+		<echo message="Erstelle JavaDoc" />
+		<javadoc packagenames="com.agynamix.*" classpathref="compile.classpath" defaultexcludes="yes"
+        destdir="${prj.target.javadoc.dir}" author="true" version="true" use="true" private="true"
+        windowtitle="Simidude Source Documentation" encoding="Cp1252" source="1.5"  maxmemory="256m">
+			<sourcepath>
+				<dirset dir="${prj.src.java.dir}"/>
+			</sourcepath>
+			<doctitle>
+				<![CDATA[<h1>Simidude</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>AGYNAMIX</i>]]></bottom>
+</javadoc>
+</target>
+
+<!-- target for continuous build -->
+<target name="hudson" depends="dist, javadoc, test">
+</target>
+
+<target name="clean">
+<delete dir="${prj.target.dir}" />
+</target>
+
+</project>

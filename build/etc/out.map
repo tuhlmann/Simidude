@@ -1,0 +1,1920 @@
+com.agynamix.license.DefaultLicenseManager -> com.agynamix.license.j:
+    com.agynamix.license.ILicenseParam licenseParam -> a
+    com.agynamix.license.License installedLicense -> b
+    java.security.PrivateKey privateKey -> c
+    java.security.PublicKey publicKey -> d
+    java.security.PublicKey publicTrialKey -> e
+    java.util.logging.Logger log -> f
+    com.agynamix.license.License reviewLicense() -> b
+    com.agynamix.license.License getInstalledLicense() -> c
+    com.agynamix.license.License installLicense(com.agynamix.license.License) -> b
+    java.lang.String exportLicense(com.agynamix.license.License) -> a
+    com.agynamix.license.License signLicense(com.agynamix.license.License) -> c
+    com.agynamix.license.License signTrialLicense(com.agynamix.license.License) -> d
+    com.agynamix.license.License signLicense(java.security.PrivateKey,com.agynamix.license.License) -> a
+    boolean verifyLicenseIntegrity(com.agynamix.license.License) -> e
+    com.agynamix.license.License validateLicenseText(java.lang.String) -> a
+    java.security.PrivateKey getPrivateKey(byte[],byte[]) -> a
+    java.security.PublicKey getPublicKey(byte[],byte[]) -> b
+    void createLicenseKeyPair() -> a
+com.agynamix.license.GeneralLicenseException -> com.agynamix.license.a:
+com.agynamix.license.ILicenseManager -> com.agynamix.license.g:
+    void createLicenseKeyPair() -> a
+    com.agynamix.license.License reviewLicense() -> b
+    com.agynamix.license.License getInstalledLicense() -> c
+    com.agynamix.license.License validateLicenseText(java.lang.String) -> a
+    java.lang.String exportLicense(com.agynamix.license.License) -> a
+    com.agynamix.license.License installLicense(com.agynamix.license.License) -> b
+    com.agynamix.license.License signLicense(com.agynamix.license.License) -> c
+com.agynamix.license.ILicenseParam -> com.agynamix.license.h:
+    java.util.prefs.Preferences getPreferences() -> a
+    byte[] getPrivateKey() -> b
+    byte[] getPublicKey() -> c
+    byte[] getPublicTrialKey() -> d
+    byte[] getPrivateKeyPassword() -> f
+    byte[] getPublicKeyPassword() -> g
+    byte[] getPublicTrialKeyPassword() -> h
+    byte[] getLicenseKeyPassword() -> e
+    boolean isTrialEligible() -> k
+    void removeTrialEligibility() -> l
+    com.agynamix.license.License createTrialLicense() -> i
+    com.agynamix.license.ILicenseValidator getLicenseValidator() -> j
+    void storePublicTrialKey(byte[]) -> a
+com.agynamix.license.ILicenseStatus -> com.agynamix.license.m:
+    boolean licenseValid -> a
+    java.lang.String userMessage -> b
+    boolean isLicenseValid() -> a
+    java.lang.String getUserMessage() -> b
+com.agynamix.license.ILicenseValidator -> com.agynamix.license.d:
+    java.util.prefs.Preferences preferences -> a
+    com.agynamix.license.ILicenseStatus validate(com.agynamix.license.License) -> a
+    java.util.prefs.Preferences getPreferences() -> a
+    byte[] getPrivateKey() -> b
+    byte[] getPublicKey() -> c
+    byte[] getPublicTrialKey() -> d
+    byte[] getLicenseKeyPassword() -> e
+    byte[] getPrivateKeyPassword() -> f
+    byte[] getPublicKeyPassword() -> g
+    byte[] getPublicTrialKeyPassword() -> h
+    com.agynamix.license.License createTrialLicense() -> i
+    com.agynamix.license.ILicenseValidator getLicenseValidator() -> j
+    boolean isTrialEligible() -> k
+    void removeTrialEligibility() -> l
+    void storePublicTrialKey(byte[]) -> a
+    java.lang.String getVersionFirstDigit() -> m
+com.agynamix.license.KeyGenerator -> com.agynamix.license.KeyGenerator:
+    void main(java.lang.String[]) -> main
+com.agynamix.license.License -> com.agynamix.license.e:
+    java.util.Date NEVER_EXPIRE_DATE -> a
+    com.agynamix.license.License$LicenseType licenseType -> b
+    java.lang.String serialNumber -> c
+    java.lang.String holderCompany -> d
+    java.lang.String holderName -> e
+    java.lang.String holderEmail -> f
+    java.lang.String subject -> g
+    java.lang.String version -> h
+    java.lang.String signature -> i
+    java.util.Date expireDate -> j
+    java.lang.String licenseText -> k
+    void setSerialNumber(java.lang.String) -> a
+    void setSubject(java.lang.String) -> b
+    void setVersion(java.lang.String) -> c
+    void setNeverExpires() -> a
+    void setExpireDate(java.util.Date) -> a
+    java.lang.String getHolderCompany() -> b
+    void setHolderCompany(java.lang.String) -> d
+    java.lang.String getHolderName() -> c
+    void setHolderName(java.lang.String) -> e
+    java.lang.String getHolderEmail() -> d
+    void setHolderEmail(java.lang.String) -> f
+    void setSignature(java.lang.String) -> g
+    java.lang.String getSignature() -> e
+    java.lang.String getSubject() -> f
+    java.lang.String getVersion() -> g
+    java.util.Date getExpireDate() -> h
+    java.lang.String getExpireDateStr() -> i
+    void setLicenseType(com.agynamix.license.License$LicenseType) -> a
+    com.agynamix.license.License$LicenseType getLicenseType() -> j
+    java.util.Properties getProperties(boolean) -> a
+    void setLicenseText(java.lang.String) -> h
+    java.lang.String getLicenseText() -> k
+    java.lang.String getLicenseVersion() -> l
+com.agynamix.license.License$LicenseType -> com.agynamix.license.l:
+    com.agynamix.license.License$LicenseType TRIAL -> a
+    com.agynamix.license.License$LicenseType FULL -> b
+    java.lang.String descriptiveName -> c
+    com.agynamix.license.License$LicenseType[] $VALUES -> d
+    com.agynamix.license.License$LicenseType[] values() -> values
+    com.agynamix.license.License$LicenseType valueOf(java.lang.String) -> valueOf
+    java.lang.String getDescriptiveName() -> a
+com.agynamix.license.LicenseGenerationException -> com.agynamix.license.f:
+com.agynamix.license.LicenseGenerator -> com.agynamix.license.LicenseGenerator:
+    void main(java.lang.String[]) -> main
+com.agynamix.license.LicenseIntegrityViolationException -> com.agynamix.license.c:
+com.agynamix.license.LicenseManagerFactory -> com.agynamix.license.k:
+    com.agynamix.license.ILicenseManager licenseManager -> a
+    com.agynamix.license.ILicenseManager getLicenseManager() -> a
+    void registerLicenseManager(com.agynamix.license.ILicenseManager) -> a
+com.agynamix.license.LicenseUtils -> com.agynamix.license.i:
+    java.util.Date HIGH_DATE -> a
+    byte[] ivBytes -> b
+    java.lang.String license2encryptedString(com.agynamix.license.License,byte[]) -> a
+    java.lang.String padString(java.lang.String,int,java.lang.String) -> a
+    com.agynamix.license.License encryptedString2License(java.lang.String,byte[]) -> a
+    com.agynamix.license.License transportFormat2License(java.lang.String) -> a
+    java.lang.String license2TransportFormat(com.agynamix.license.License,boolean) -> a
+    byte[] base64ToBytes(java.lang.String) -> b
+    java.lang.String bytesToBase64(byte[]) -> a
+    byte[] decrypt(byte[],byte[]) -> a
+    byte[] encrypt(byte[],byte[]) -> b
+    byte[] signLicense(java.security.PrivateKey,com.agynamix.license.License) -> a
+    boolean verifyLicenseIntegrity(java.security.PublicKey,com.agynamix.license.License) -> a
+    byte[] getBytesFromClasspathResource(java.lang.Class,java.lang.String) -> a
+    java.security.KeyPair generateKeyPair(int) -> a
+com.agynamix.license.LicenseVerificationException -> com.agynamix.license.b:
+com.agynamix.license.SignatureExample -> com.agynamix.license.SignatureExample:
+    void main(java.lang.String[]) -> main
+    java.lang.String printBytes(byte[]) -> a
+    boolean verifySig(byte[],java.security.PublicKey,byte[]) -> a
+    java.security.KeyPair generateKeyPair(long) -> a
+com.agynamix.license.SymmetricEncryptionExample -> com.agynamix.license.SymmetricEncryptionExample:
+    void main(java.lang.String[]) -> main
+com.agynamix.license.ui.CmdLicenseGenerator -> com.agynamix.license.ui.CmdLicenseGenerator:
+    java.util.logging.Logger log -> a
+    void main(java.lang.String[]) -> main
+    java.lang.String decodeField(java.lang.String) -> a
+com.agynamix.platform.bugzscout.BugzScoutCtl -> com.agynamix.platform.bugzscout.BugzScoutCtl:
+    java.lang.String url -> a
+    java.lang.String userName -> b
+    java.lang.String project -> c
+    java.lang.String area -> d
+    java.lang.String defaultMessage -> e
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer submitBug(java.lang.String,java.lang.String,java.lang.String,boolean) -> a
+    void setArea(java.lang.String) -> a
+    void setDefaultMessage(java.lang.String) -> b
+    void setProject(java.lang.String) -> c
+    void setUrl(java.lang.String) -> d
+    void setUserName(java.lang.String) -> e
+    void main(java.lang.String[]) -> main
+com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer -> com.agynamix.platform.bugzscout.e:
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode returnCode -> a
+    java.lang.String message -> b
+    java.lang.String getMessage() -> a
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode getReturnCode() -> b
+com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode -> com.agynamix.platform.bugzscout.b:
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode UNKNOWN -> a
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode SUCCESS -> b
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode ERROR -> c
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode SYSERROR -> d
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode[] $VALUES -> e
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode[] values() -> values
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer$ReturnCode valueOf(java.lang.String) -> valueOf
+com.agynamix.platform.bugzscout.SimpleHttpClient -> com.agynamix.platform.bugzscout.a:
+    java.net.Proxy findProxy(java.net.URI) -> a
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response sendRequest(java.lang.String,java.util.Map) -> a
+    java.lang.String readFromStream(java.io.InputStream) -> a
+com.agynamix.platform.bugzscout.SimpleHttpClient$Response -> com.agynamix.platform.bugzscout.c:
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status responseStatus -> a
+    java.lang.String errorMsg -> b
+    byte[] body -> c
+com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status -> com.agynamix.platform.bugzscout.d:
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status SC_UNKNOWN -> c
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status SC_OK -> a
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status SC_ERROR -> b
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status[] $VALUES -> d
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status[] values() -> values
+    com.agynamix.platform.bugzscout.SimpleHttpClient$Response$Status valueOf(java.lang.String) -> valueOf
+com.agynamix.platform.concurrent.AbstractService -> com.agynamix.platform.f.a:
+    java.lang.String serviceId -> a
+    boolean stopped -> b
+    boolean isInitialized -> c
+    java.util.logging.Logger log -> d
+    java.lang.String getId() -> a
+    void initialize() -> b
+    void internalInitialize() -> c
+    void shutdown() -> d
+    void internalRun() -> e
+    void run() -> run
+com.agynamix.platform.concurrent.ThreadManager -> com.agynamix.platform.f.b:
+    java.util.List processList -> a
+    java.util.concurrent.ExecutorService service -> b
+    java.util.logging.Logger log -> c
+    void startRegisteredServices() -> a
+    void shutdownNow() -> b
+com.agynamix.platform.concurrent.ThreadManagerAware -> com.agynamix.platform.f.c:
+    void shutdown() -> d
+    java.lang.String getId() -> a
+com.agynamix.platform.frontend.action.CheckUpdatesAction -> com.agynamix.platform.a.c.n:
+    void run() -> run
+com.agynamix.platform.frontend.action.CheckUpdatesAction$1 -> com.agynamix.platform.a.c.a:
+    void exited(int) -> exited
+    void prepareShutdown() -> prepareShutdown
+com.agynamix.platform.frontend.action.ClearClipboardTableAction -> com.agynamix.platform.a.c.f:
+    boolean isNetworkRemove -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.CopyAction -> com.agynamix.platform.a.c.h:
+    void run() -> run
+com.agynamix.platform.frontend.action.CutAction -> com.agynamix.platform.a.c.e:
+    void run() -> run
+com.agynamix.platform.frontend.action.ExitAction -> com.agynamix.platform.a.c.j:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.HideAction -> com.agynamix.platform.a.c.l:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.InputTextAction -> com.agynamix.platform.a.c.i:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.LicenseDialogAction -> com.agynamix.platform.a.c.g:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.PreferencesAction -> com.agynamix.platform.a.c.k:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.RemoveSelectedClipboardEntry -> com.agynamix.platform.a.c.c:
+    boolean isNetworkRemove -> a
+    void selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent) -> selectionChanged
+    void run() -> run
+com.agynamix.platform.frontend.action.SaveAsAction -> com.agynamix.platform.a.c.b:
+    void run() -> run
+com.agynamix.platform.frontend.action.SaveAsCompressedAction -> com.agynamix.platform.a.c.m:
+    void run() -> run
+com.agynamix.platform.frontend.action.SubmitBugzScoutAction -> com.agynamix.platform.a.c.d:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.platform.frontend.action.ToggleShowToolbarAction -> com.agynamix.platform.a.c.o:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    org.eclipse.swt.widgets.Control toolbar -> b
+    void setToolbar(org.eclipse.swt.widgets.Control) -> a
+    void run() -> run
+    void showToolbar(boolean) -> a
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog -> com.agynamix.platform.a.b.d:
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    void seperator(org.eclipse.swt.widgets.Composite) -> a
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    void access$000(com.agynamix.platform.frontend.dialogs.AboutApplicationDialog) -> a
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog$1 -> com.agynamix.platform.a.b.g:
+    org.eclipse.swt.widgets.Label val$email -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog$2 -> com.agynamix.platform.a.b.c:
+    org.eclipse.swt.graphics.Cursor val$hoverCursor -> a
+    org.eclipse.swt.graphics.Color val$hoverForeground -> b
+    void widgetDisposed(org.eclipse.swt.events.DisposeEvent) -> widgetDisposed
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog$3 -> com.agynamix.platform.a.b.l:
+    org.eclipse.swt.widgets.Label val$www -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog$4 -> com.agynamix.platform.a.b.a:
+    com.agynamix.platform.frontend.dialogs.AboutApplicationDialog this$0 -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.AboutApplicationDialog$5 -> com.agynamix.platform.a.b.b:
+    java.lang.String val$companyOrderUrl -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.AbstractDetailsDialog -> com.agynamix.platform.a.b.k:
+    java.lang.String shortTitle -> a
+    java.lang.String title -> b
+    java.lang.String message -> c
+    org.eclipse.swt.graphics.Image image -> d
+    org.eclipse.swt.widgets.Button detailsButton -> e
+    org.eclipse.swt.widgets.Control detailsArea -> f
+    org.eclipse.swt.graphics.Point cachedWindowSize -> g
+    void buttonPressed(int) -> buttonPressed
+    void configureShell(org.eclipse.swt.widgets.Shell) -> configureShell
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    org.eclipse.swt.widgets.Control createDetailsArea(org.eclipse.swt.widgets.Composite) -> a
+    java.lang.String getDetailsAsString() -> a
+com.agynamix.platform.frontend.dialogs.BugReportDetailsDialog -> com.agynamix.platform.a.b.h:
+    org.eclipse.swt.graphics.Image image -> a
+    org.eclipse.swt.graphics.Color backgroundColor -> b
+    java.lang.String title -> c
+    java.lang.String description -> d
+    java.lang.String userEmail -> e
+    boolean close() -> close
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+com.agynamix.platform.frontend.dialogs.BugzScoutAnswerDialog -> com.agynamix.platform.a.b.j:
+    org.eclipse.swt.graphics.Image image -> a
+    org.eclipse.swt.graphics.Color backgroundColor -> b
+    com.agynamix.platform.bugzscout.BugzScoutCtl$ScoutAnswer answer -> c
+    boolean close() -> close
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+com.agynamix.platform.frontend.dialogs.BugzScoutDialog -> com.agynamix.platform.a.b.n:
+    org.eclipse.swt.graphics.Image image -> a
+    org.eclipse.swt.widgets.Text bugTitle -> b
+    org.eclipse.swt.widgets.Text bugDescription -> c
+    org.eclipse.swt.widgets.Text userEmail -> d
+    java.lang.String extraInformation -> e
+    java.lang.String systemInformation -> f
+    java.lang.String bugTitleStr -> g
+    boolean isUserOpened -> h
+    boolean close() -> close
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    void buttonPressed(int) -> buttonPressed
+    java.lang.String composeTitle(java.lang.String,java.lang.String,boolean) -> a
+    java.lang.String composeBugDescription(java.lang.String,java.lang.String,java.lang.String) -> a
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+com.agynamix.platform.frontend.dialogs.ExceptionDetailsDialog -> com.agynamix.platform.a.b.o:
+    java.lang.Throwable details -> a
+    org.eclipse.swt.widgets.Control createDetailsArea(org.eclipse.swt.widgets.Composite) -> a
+    java.lang.String getDetailsAsString() -> a
+    java.lang.String getTitle(java.lang.String,java.lang.Object) -> a
+    java.lang.String getMessage(java.lang.String,java.lang.Object) -> b
+    void appendException(java.io.PrintWriter,java.lang.Throwable) -> a
+    void appendStatus(java.io.PrintWriter,org.eclipse.core.runtime.IStatus,int) -> a
+com.agynamix.platform.frontend.dialogs.InputNetworkAddressDialog -> com.agynamix.platform.a.b.m:
+    org.eclipse.swt.widgets.Text text -> a
+    java.lang.String finalContents -> b
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    void buttonPressed(int) -> buttonPressed
+    java.lang.String getText() -> a
+com.agynamix.platform.frontend.dialogs.InputNetworkAddressDialog$1 -> com.agynamix.platform.a.b.i:
+    com.agynamix.platform.frontend.dialogs.InputNetworkAddressDialog this$0 -> a
+    void keyPressed(org.eclipse.swt.events.KeyEvent) -> keyPressed
+com.agynamix.platform.frontend.dialogs.InputTextDialog -> com.agynamix.platform.a.b.f:
+    org.eclipse.swt.widgets.Text text -> a
+    java.lang.String finalContents -> b
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    void buttonPressed(int) -> buttonPressed
+    java.lang.String getText() -> a
+com.agynamix.platform.frontend.dialogs.InputTextDialog$1 -> com.agynamix.platform.a.b.e:
+    com.agynamix.platform.frontend.dialogs.InputTextDialog this$0 -> a
+    void keyPressed(org.eclipse.swt.events.KeyEvent) -> keyPressed
+com.agynamix.platform.frontend.dialogs.license.ILicenseDialogView -> com.agynamix.platform.a.b.a.e:
+    int open() -> open
+    void setPresenter(com.agynamix.platform.frontend.dialogs.license.LicenseDialog) -> a
+    java.lang.String getLicenseString() -> a
+    void onLicenseNotValid(java.lang.String) -> a
+    void onLicenseValid() -> b
+    void setProduct(java.lang.String) -> b
+    void setExpDate(java.lang.String) -> d
+    void setLicenseType(java.lang.String) -> e
+    void setUserName(java.lang.String) -> f
+    void setCompany(java.lang.String) -> g
+    void setEmail(java.lang.String) -> h
+    void setProductVersion(java.lang.String) -> c
+    void setLicenseText(java.lang.String) -> i
+    void enableOkButton(boolean) -> a
+    org.eclipse.swt.widgets.Shell getShell() -> getShell
+com.agynamix.platform.frontend.dialogs.license.LicenseDialog -> com.agynamix.platform.a.b.a.a:
+    com.agynamix.platform.frontend.dialogs.license.ILicenseDialogView view -> a
+    com.agynamix.license.License currentLicense -> b
+    int open() -> a
+    void onInit() -> b
+    void onValidate() -> c
+    void setLicenseFields(com.agynamix.license.License) -> a
+    com.agynamix.simidude.source.impl.TextSourceData$TextType recognizeTextType(java.lang.String) -> a
+com.agynamix.platform.frontend.dialogs.license.LicenseDialogView -> com.agynamix.platform.a.b.a.d:
+    com.agynamix.platform.frontend.dialogs.license.LicenseDialog presenter -> a
+    org.eclipse.swt.widgets.Text licStr -> b
+    org.eclipse.swt.widgets.Button btnValidate -> c
+    org.eclipse.swt.dnd.Clipboard clipboard -> d
+    com.agynamix.platform.frontend.dialogs.license.LicenseInformationView licenseView -> e
+    void setPresenter(com.agynamix.platform.frontend.dialogs.license.LicenseDialog) -> a
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    void buttonPressed(int) -> buttonPressed
+    org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    java.lang.String getLicenseString() -> a
+    void onLicenseNotValid(java.lang.String) -> a
+    void onLicenseValid() -> b
+    void enableOkButton(boolean) -> a
+    void setProduct(java.lang.String) -> b
+    void setProductVersion(java.lang.String) -> c
+    void setExpDate(java.lang.String) -> d
+    void setLicenseType(java.lang.String) -> e
+    void setUserName(java.lang.String) -> f
+    void setCompany(java.lang.String) -> g
+    void setEmail(java.lang.String) -> h
+    void setLicenseText(java.lang.String) -> i
+com.agynamix.platform.frontend.dialogs.license.LicenseDialogView$1 -> com.agynamix.platform.a.b.a.c:
+    com.agynamix.platform.frontend.dialogs.license.LicenseDialogView this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.dialogs.license.LicenseDialogView$2 -> com.agynamix.platform.a.b.a.g:
+    com.agynamix.platform.frontend.dialogs.license.LicenseDialogView this$0 -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.license.LicenseDialogView$3 -> com.agynamix.platform.a.b.a.f:
+    com.agynamix.platform.frontend.dialogs.license.LicenseDialogView this$0 -> a
+    void mouseDown(org.eclipse.swt.events.MouseEvent) -> mouseDown
+com.agynamix.platform.frontend.dialogs.license.LicenseInformationView -> com.agynamix.platform.a.b.a.b:
+    org.eclipse.swt.widgets.Composite parent -> a
+    org.eclipse.swt.widgets.Text txtProduct -> b
+    org.eclipse.swt.widgets.Text txtVersion -> c
+    org.eclipse.swt.widgets.Text expDate -> d
+    org.eclipse.swt.widgets.Text licType -> e
+    org.eclipse.swt.widgets.Text txtName -> f
+    org.eclipse.swt.widgets.Text txtCompany -> g
+    org.eclipse.swt.widgets.Text txtEmail -> h
+    org.eclipse.swt.widgets.Composite create() -> a
+    void setProduct(java.lang.String) -> a
+    void setProductVersion(java.lang.String) -> b
+    void setExpDate(java.lang.String) -> c
+    void setLicenseType(java.lang.String) -> d
+    void setUserName(java.lang.String) -> e
+    void setCompany(java.lang.String) -> f
+    void setEmail(java.lang.String) -> g
+    com.agynamix.platform.net.protocol.NodeCommand toProtocol(byte[]) -> a
+    java.lang.String getCommand(byte[]) -> b
+com.agynamix.platform.frontend.gui.ApplicationGUI -> com.agynamix.platform.a.d.o:
+    org.eclipse.swt.graphics.Image shellImage -> e
+    com.agynamix.platform.frontend.gui.ApplicationTray myTray -> f
+    com.agynamix.platform.infra.IConfiguration config -> g
+    org.eclipse.jface.action.IAction exitAction -> h
+    org.eclipse.jface.action.IAction licenseDialogAction -> i
+    org.eclipse.jface.action.IAction hideAction -> j
+    org.eclipse.jface.action.IAction toggleMonitorClipboardAction -> k
+    com.agynamix.platform.frontend.action.ToggleShowToolbarAction toggleShowToolbarAction -> l
+    org.eclipse.jface.action.IAction clearClipboardTableAction -> m
+    com.agynamix.platform.frontend.action.RemoveSelectedClipboardEntry removeSelectedClipboardEntryAction -> n
+    org.eclipse.jface.action.IAction networkClearClipboardTableAction -> o
+    com.agynamix.platform.frontend.action.RemoveSelectedClipboardEntry networkRemoveSelectedClipboardEntryAction -> p
+    org.eclipse.jface.action.IAction helpAction -> q
+    org.eclipse.jface.action.IAction aboutAction -> r
+    org.eclipse.jface.action.IAction preferencesAction -> s
+    org.eclipse.jface.action.IAction copyAction -> a
+    org.eclipse.jface.action.IAction cutAction -> b
+    org.eclipse.jface.action.IAction saveAsAction -> c
+    org.eclipse.jface.action.IAction saveAsCompressedAction -> d
+    org.eclipse.jface.action.IAction inputTextAction -> t
+    org.eclipse.jface.action.IAction submitABugAction -> u
+    void initializeApplicationGUI() -> e
+    org.eclipse.jface.action.StatusLineManager createStatusLineManager() -> createStatusLineManager
+    com.agynamix.platform.frontend.gui.ApplicationStatusLineManager getStatusLineManager() -> f
+    org.eclipse.jface.action.CoolBarManager createCoolBarManager(int) -> createCoolBarManager
+    org.eclipse.jface.action.ToolBarManager createToolBarManager(int) -> createToolBarManager
+    org.eclipse.jface.action.MenuManager createMenuManager() -> createMenuManager
+    org.eclipse.swt.graphics.Image getShellImage() -> b
+    org.eclipse.swt.graphics.Point getInitialShellSize() -> a
+    java.lang.String getInitialStatusLine() -> c
+    org.eclipse.swt.widgets.Control fillMainWindow(org.eclipse.swt.widgets.Composite) -> a
+    org.eclipse.swt.widgets.Control getCustomToolbar() -> d
+    org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    java.lang.String getShellText() -> g
+    com.agynamix.platform.frontend.gui.ApplicationTray createApplicationTray(org.eclipse.jface.window.Window,org.eclipse.swt.widgets.Shell,org.eclipse.swt.graphics.Image) -> a
+    boolean canHandleShellCloseEvent() -> canHandleShellCloseEvent
+    boolean close() -> close
+    void run() -> h
+    void shutdownApplicationGui() -> i
+    int open() -> open
+    org.eclipse.swt.widgets.Composite createCustomToolbar(org.eclipse.swt.widgets.Composite) -> b
+    org.eclipse.jface.action.StatusLineManager getStatusLineManager() -> getStatusLineManager
+com.agynamix.platform.frontend.gui.ApplicationGUI$1 -> com.agynamix.platform.a.d.a:
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationGUI$2 -> com.agynamix.platform.a.d.r:
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationGUI$3 -> com.agynamix.platform.a.d.u:
+    com.agynamix.platform.frontend.gui.ApplicationGUI this$0 -> a
+    void menuAboutToShow(org.eclipse.jface.action.IMenuManager) -> menuAboutToShow
+com.agynamix.platform.frontend.gui.ApplicationGUI$4 -> com.agynamix.platform.a.d.h:
+    com.agynamix.platform.frontend.gui.ApplicationGUI this$0 -> a
+    void menuAboutToShow(org.eclipse.jface.action.IMenuManager) -> menuAboutToShow
+com.agynamix.platform.frontend.gui.ApplicationGUI$5 -> com.agynamix.platform.a.d.j:
+    com.agynamix.platform.frontend.gui.ApplicationGUI this$0 -> a
+    void shellClosed(org.eclipse.swt.events.ShellEvent) -> shellClosed
+com.agynamix.platform.frontend.gui.ApplicationGUI$6 -> com.agynamix.platform.a.d.m:
+    com.agynamix.platform.frontend.gui.ApplicationGUI this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationStatusLineManager -> com.agynamix.platform.a.d.f:
+    void setErrorMessage(org.eclipse.swt.graphics.Image,java.lang.String) -> setErrorMessage
+    void setErrorMessage(java.lang.String) -> setErrorMessage
+    void setMessage(org.eclipse.swt.graphics.Image,java.lang.String) -> setMessage
+    void setMessage(java.lang.String) -> setMessage
+com.agynamix.platform.frontend.gui.ApplicationTray -> com.agynamix.platform.a.d.p:
+    org.eclipse.jface.window.Window window -> g
+    org.eclipse.swt.widgets.Shell shell -> a
+    org.eclipse.swt.graphics.Image trayImage -> b
+    org.eclipse.swt.graphics.Image exitImage -> c
+    org.eclipse.swt.graphics.Image openImage -> d
+    org.eclipse.swt.widgets.Tray tray -> e
+    org.eclipse.swt.widgets.TrayItem trayItem -> f
+    void openMainWindow() -> a
+    void closeMainWindow() -> b
+    void toggleMainWindowActive() -> c
+    void closeApplication() -> d
+com.agynamix.platform.frontend.gui.ApplicationTray$1 -> com.agynamix.platform.a.d.n:
+    com.agynamix.platform.frontend.gui.ApplicationTray this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationTray$2 -> com.agynamix.platform.a.d.i:
+    void run() -> a
+com.agynamix.platform.frontend.gui.ApplicationTray$3 -> com.agynamix.platform.a.d.s:
+    void run() -> a
+com.agynamix.platform.frontend.gui.ApplicationTray$4 -> com.agynamix.platform.a.d.t:
+    void run() -> a
+com.agynamix.platform.frontend.gui.ApplicationTray$5 -> com.agynamix.platform.a.d.q:
+    com.agynamix.platform.infra.PluginMenuEntry val$entry -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationTray$6 -> com.agynamix.platform.a.d.v:
+    com.agynamix.platform.frontend.gui.ApplicationTray this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationTray$7 -> com.agynamix.platform.a.d.d:
+    com.agynamix.platform.frontend.gui.ApplicationTray this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationTray$8 -> com.agynamix.platform.a.d.b:
+    com.agynamix.platform.frontend.gui.ApplicationTray this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.ApplicationTray$9 -> com.agynamix.platform.a.d.e:
+    org.eclipse.swt.widgets.Menu val$menu -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.platform.frontend.gui.CarbonUIEnhancer -> com.agynamix.platform.a.d.l:
+    java.lang.String fgAboutActionName -> a
+    java.lang.Class osCls -> b
+    void hookApplicationMenu(org.eclipse.swt.widgets.Display,org.eclipse.swt.widgets.Listener,org.eclipse.jface.action.IAction,org.eclipse.jface.action.IAction) -> a
+    java.lang.Class classForName(java.lang.String) -> a
+    java.lang.Object newInstance(java.lang.String,java.lang.Class[],java.lang.Object[]) -> a
+    java.lang.Object invoke(java.lang.Class,java.lang.String,java.lang.Class[],java.lang.Object[]) -> a
+    java.lang.Object invoke(java.lang.Object,java.lang.String,java.lang.Class[],java.lang.Object[]) -> a
+    java.lang.Object fieldValue(java.lang.Class,java.lang.String) -> a
+    java.lang.Object access$600(com.agynamix.platform.frontend.gui.CarbonUIEnhancer,java.lang.Object,java.lang.String) -> a
+com.agynamix.platform.frontend.gui.CarbonUIEnhancer$1 -> com.agynamix.platform.a.d.k:
+com.agynamix.platform.frontend.gui.CarbonUIEnhancer$2 -> com.agynamix.platform.a.d.g:
+    java.lang.Object val$commandCallback -> a
+    com.agynamix.platform.frontend.gui.CarbonUIEnhancer this$0 -> b
+    void run() -> run
+com.agynamix.platform.frontend.gui.CustomToolbar -> com.agynamix.platform.a.d.c:
+    java.util.List toolbarItems -> a
+    org.eclipse.swt.widgets.Composite toolbar -> b
+    org.eclipse.swt.widgets.Composite parent -> c
+    void add(org.eclipse.jface.action.IAction) -> a
+    void add(org.eclipse.jface.action.IContributionItem) -> a
+    org.eclipse.swt.widgets.Composite getToolbar() -> a
+com.agynamix.platform.frontend.preferences.ApplicationChooserFieldEditor -> com.agynamix.platform.a.a.e:
+    boolean enforceAbsolute -> a
+    boolean checkState() -> checkState
+com.agynamix.platform.frontend.preferences.ApplicationPreferenceDialog -> com.agynamix.platform.a.a.o:
+    org.eclipse.swt.widgets.Shell shell -> a
+    java.util.List preferenceDialogListeners -> b
+    int open() -> a
+    void addPreferenceDialogListener(com.agynamix.platform.frontend.preferences.IPreferenceDialogListener) -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> a
+com.agynamix.platform.frontend.preferences.ApplicationPreferenceStore -> com.agynamix.platform.a.a.j:
+    org.eclipse.core.runtime.ListenerList listeners -> a
+    java.util.Properties properties -> b
+    java.util.Properties defaultProperties -> c
+    boolean dirty -> d
+    com.agynamix.platform.infra.IPreferenceConfigAdapter configAdapter -> e
+    void addPropertyChangeListener(org.eclipse.jface.util.IPropertyChangeListener) -> addPropertyChangeListener
+    boolean contains(java.lang.String) -> contains
+    void firePropertyChangeEvent(java.lang.String,java.lang.Object,java.lang.Object) -> firePropertyChangeEvent
+    boolean getBoolean(java.lang.String) -> getBoolean
+    boolean getBoolean(java.util.Properties,java.lang.String) -> a
+    boolean getDefaultBoolean(java.lang.String) -> getDefaultBoolean
+    double getDefaultDouble(java.lang.String) -> getDefaultDouble
+    float getDefaultFloat(java.lang.String) -> getDefaultFloat
+    int getDefaultInt(java.lang.String) -> getDefaultInt
+    long getDefaultLong(java.lang.String) -> getDefaultLong
+    java.lang.String getDefaultString(java.lang.String) -> getDefaultString
+    double getDouble(java.lang.String) -> getDouble
+    double getDouble(java.util.Properties,java.lang.String) -> b
+    float getFloat(java.lang.String) -> getFloat
+    float getFloat(java.util.Properties,java.lang.String) -> c
+    int getInt(java.lang.String) -> getInt
+    int getInt(java.util.Properties,java.lang.String) -> d
+    long getLong(java.lang.String) -> getLong
+    long getLong(java.util.Properties,java.lang.String) -> e
+    java.lang.String getString(java.lang.String) -> getString
+    java.lang.String getString(java.util.Properties,java.lang.String) -> f
+    boolean isDefault(java.lang.String) -> isDefault
+    void load(java.util.Properties) -> a
+    void loadDefaults(java.util.Properties) -> b
+    boolean needsSaving() -> needsSaving
+    void putValue(java.lang.String,java.lang.String) -> putValue
+    void removePropertyChangeListener(org.eclipse.jface.util.IPropertyChangeListener) -> removePropertyChangeListener
+    void save() -> save
+    void setDefault(java.lang.String,double) -> setDefault
+    void setDefault(java.lang.String,float) -> setDefault
+    void setDefault(java.lang.String,int) -> setDefault
+    void setDefault(java.lang.String,long) -> setDefault
+    void setDefault(java.lang.String,java.lang.String) -> setDefault
+    void setDefault(java.lang.String,boolean) -> setDefault
+    void setToDefault(java.lang.String) -> setToDefault
+    void setValue(java.lang.String,double) -> setValue
+    void setValue(java.lang.String,float) -> setValue
+    void setValue(java.lang.String,int) -> setValue
+    void setValue(java.lang.String,long) -> setValue
+    void setValue(java.lang.String,java.lang.String) -> setValue
+    void setValue(java.lang.String,boolean) -> setValue
+    void setValue(java.util.Properties,java.lang.String,double) -> a
+    void setValue(java.util.Properties,java.lang.String,float) -> a
+    void setValue(java.util.Properties,java.lang.String,int) -> a
+    void setValue(java.util.Properties,java.lang.String,long) -> a
+    void setValue(java.util.Properties,java.lang.String,java.lang.String) -> a
+    void setValue(java.util.Properties,java.lang.String,boolean) -> a
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageDefaults -> com.agynamix.platform.a.a.k:
+    org.eclipse.jface.preference.FieldEditor startMinimized -> a
+    org.eclipse.jface.preference.BooleanFieldEditor restoreLatestEntry -> b
+    org.eclipse.jface.preference.ComboFieldEditor updateSchedule -> c
+    org.eclipse.jface.preference.ComboFieldEditor modifierKey -> d
+    com.agynamix.platform.frontend.preferences.ApplicationChooserFieldEditor defaultTextEditor -> e
+    com.agynamix.platform.frontend.preferences.ApplicationChooserFieldEditor defaultImageViewer -> f
+    com.agynamix.platform.frontend.preferences.ApplicationChooserFieldEditor defaultFileBrowser -> g
+    java.lang.String[][] modifierKeyNames -> h
+    void createFieldEditors() -> createFieldEditors
+    void initialize() -> initialize
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageDefaults$1 -> com.agynamix.platform.a.a.d:
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageDefaults$2 -> com.agynamix.platform.a.a.a:
+    int[] $SwitchMap$com$agynamix$platform$infra$PlatformUtils$OS -> a
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork -> com.agynamix.platform.a.a.i:
+    org.eclipse.jface.preference.StringFieldEditor groupName -> c
+    com.agynamix.platform.frontend.preferences.PasswordFieldEditor groupPassword -> d
+    org.eclipse.jface.preference.IntegerFieldEditor helloPort -> e
+    org.eclipse.jface.preference.IntegerFieldEditor serverPort -> f
+    org.eclipse.jface.preference.BooleanFieldEditor startHttpServer -> a
+    org.eclipse.jface.preference.IntegerFieldEditor httpServerPort -> b
+    com.agynamix.platform.frontend.preferences.NetworkAddressListFieldEditor networkAddrList -> g
+    void createFieldEditors() -> createFieldEditors
+    boolean checkPortsUnique() -> a
+    void initialize() -> initialize
+    org.eclipse.swt.widgets.Composite access$000(com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork) -> a
+    boolean access$100(com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork) -> b
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork$1 -> com.agynamix.platform.a.a.s:
+    com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork this$0 -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork$2 -> com.agynamix.platform.a.a.n:
+    com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork this$0 -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork$3 -> com.agynamix.platform.a.a.r:
+    com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork this$0 -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork$4 -> com.agynamix.platform.a.a.p:
+    com.agynamix.platform.frontend.preferences.GlobalPreferencePageNetwork this$0 -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.IPreferenceDialogListener -> com.agynamix.platform.a.a.q:
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> a
+com.agynamix.platform.frontend.preferences.LabelFieldEditor -> com.agynamix.platform.a.a.f:
+    org.eclipse.swt.widgets.Label label -> a
+    void adjustForNumColumns(int) -> adjustForNumColumns
+    void doFillIntoGrid(org.eclipse.swt.widgets.Composite,int) -> doFillIntoGrid
+    int getNumberOfControls() -> getNumberOfControls
+    void doLoad() -> doLoad
+    void doLoadDefault() -> doLoadDefault
+    void doStore() -> doStore
+com.agynamix.platform.frontend.preferences.NetworkAddressListFieldEditor -> com.agynamix.platform.a.a.t:
+    java.lang.String createList(java.lang.String[]) -> createList
+    java.lang.String getNewInputObject() -> getNewInputObject
+    java.lang.String[] parseString(java.lang.String) -> parseString
+com.agynamix.platform.frontend.preferences.PasswordFieldEditor -> com.agynamix.platform.a.a.u:
+    int UNLIMITED -> b
+    boolean isValid -> c
+    java.lang.String oldValue -> d
+    org.eclipse.swt.widgets.Text textField -> a
+    int widthInChars -> e
+    int textLimit -> f
+    java.lang.String errorMessage -> g
+    boolean emptyStringAllowed -> h
+    int validateStrategy -> i
+    void adjustForNumColumns(int) -> adjustForNumColumns
+    void doFillIntoGrid(org.eclipse.swt.widgets.Composite,int) -> doFillIntoGrid
+    void doLoad() -> doLoad
+    void doLoadDefault() -> doLoadDefault
+    void doStore() -> doStore
+    int getNumberOfControls() -> getNumberOfControls
+    org.eclipse.swt.widgets.Text getTextControl(org.eclipse.swt.widgets.Composite) -> a
+    boolean isValid() -> isValid
+    void refreshValidState() -> refreshValidState
+    void setFocus() -> setFocus
+    void valueChanged() -> a
+    void setEnabled(boolean,org.eclipse.swt.widgets.Composite) -> setEnabled
+    void access$000(com.agynamix.platform.frontend.preferences.PasswordFieldEditor) -> a
+    void access$100(com.agynamix.platform.frontend.preferences.PasswordFieldEditor) -> b
+com.agynamix.platform.frontend.preferences.PasswordFieldEditor$1 -> com.agynamix.platform.a.a.c:
+    com.agynamix.platform.frontend.preferences.PasswordFieldEditor this$0 -> a
+    void keyReleased(org.eclipse.swt.events.KeyEvent) -> keyReleased
+com.agynamix.platform.frontend.preferences.PasswordFieldEditor$2 -> com.agynamix.platform.a.a.g:
+    com.agynamix.platform.frontend.preferences.PasswordFieldEditor this$0 -> a
+    void keyPressed(org.eclipse.swt.events.KeyEvent) -> keyPressed
+com.agynamix.platform.frontend.preferences.PasswordFieldEditor$3 -> com.agynamix.platform.a.a.h:
+    com.agynamix.platform.frontend.preferences.PasswordFieldEditor this$0 -> a
+    void focusGained(org.eclipse.swt.events.FocusEvent) -> focusGained
+    void focusLost(org.eclipse.swt.events.FocusEvent) -> focusLost
+com.agynamix.platform.frontend.preferences.PasswordFieldEditor$4 -> com.agynamix.platform.a.a.b:
+    com.agynamix.platform.frontend.preferences.PasswordFieldEditor this$0 -> a
+    void widgetDisposed(org.eclipse.swt.events.DisposeEvent) -> widgetDisposed
+com.agynamix.platform.frontend.preferences.PlatformFieldEditorPreferencePage -> com.agynamix.platform.a.a.m:
+    java.util.List preferenceDialogListeners -> a
+    java.util.Map listeners -> b
+    void addPropertyChangeListener(org.eclipse.jface.preference.FieldEditor,org.eclipse.jface.util.IPropertyChangeListener) -> a
+    void addPreferenceDialogListener(com.agynamix.platform.frontend.preferences.IPreferenceDialogListener) -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+com.agynamix.platform.frontend.preferences.SpacerFieldEditor -> com.agynamix.platform.a.a.l:
+com.agynamix.platform.httpd.HTTPResponse -> com.agynamix.platform.c.e:
+    java.lang.String status -> a
+    java.lang.String mimeType -> b
+    java.io.InputStream data -> c
+    java.util.Properties header -> d
+    void addHeader(java.lang.String,java.lang.String) -> a
+com.agynamix.platform.httpd.HTTPSession -> com.agynamix.platform.c.g:
+    java.util.logging.Logger log -> b
+    java.lang.String cssContents -> c
+    java.lang.Object cssLoadMutex -> d
+    boolean postProcessRequestHeader(java.util.Properties,java.util.Properties) -> a
+    com.agynamix.platform.httpd.HTTPResponse serve$305a4fe9(java.lang.String,java.util.Properties,java.util.Properties) -> a
+    com.agynamix.platform.httpd.HTTPResponse serveAllEntries(java.util.Properties) -> a
+    java.lang.String htmlHeader(java.lang.String) -> a
+    java.lang.String loadCssFile(java.lang.String) -> b
+    com.agynamix.platform.httpd.HTTPResponse serveEntry(java.lang.String,java.util.Properties) -> a
+    com.agynamix.platform.httpd.HTTPResponse serveDownloadEntry(java.lang.String,java.util.Properties,boolean) -> a
+    java.lang.String getUUID(java.lang.String) -> c
+    java.lang.String serveListingText$56c101bd(com.agynamix.simidude.clipboard.IClipboardItem,java.lang.String,boolean) -> a
+    java.lang.String serveListingFile$56c101bd(com.agynamix.simidude.clipboard.IClipboardItem,java.lang.String,boolean) -> b
+    java.lang.String serveListingImage$56c101bd(com.agynamix.simidude.clipboard.IClipboardItem,java.lang.String,boolean) -> c
+    com.agynamix.platform.httpd.HTTPResponse serveDownloadFile(java.util.Properties,com.agynamix.simidude.clipboard.IClipboardItem,boolean) -> a
+    com.agynamix.platform.httpd.HTTPResponse serveDownloadBuffer$5153524a(byte[],java.lang.String) -> a
+    java.lang.String embeddImage(org.eclipse.swt.graphics.ImageData,java.lang.String,java.lang.String) -> a
+com.agynamix.platform.httpd.HTTPSession$1 -> com.agynamix.platform.c.c:
+    int[] $SwitchMap$com$agynamix$simidude$source$ISourceData$SourceType -> a
+com.agynamix.platform.httpd.HTTPSessionBase -> com.agynamix.platform.c.a:
+    com.agynamix.platform.httpd.HTTPUtils httpUtils -> a
+    java.net.Socket mySocket -> b
+    java.util.Properties environment -> c
+    boolean postProcessRequestHeader(java.util.Properties,java.util.Properties) -> a
+    com.agynamix.platform.httpd.HTTPResponse serve$305a4fe9(java.lang.String,java.util.Properties,java.util.Properties) -> a
+    void run() -> run
+    java.lang.String decodePercent(java.lang.String) -> a
+    void decodeParms(java.lang.String,java.util.Properties) -> a
+com.agynamix.platform.httpd.HTTPUtils -> com.agynamix.platform.c.d:
+    java.text.SimpleDateFormat gmtFrmt -> b
+    java.net.Socket mySocket -> c
+    java.util.Hashtable theMimeTypes -> a
+    void sendError(java.lang.String,java.lang.String) -> a
+    void sendNotAuthorized(java.lang.String) -> a
+    void sendResponse(java.lang.String,java.lang.String,java.util.Properties,java.io.InputStream) -> a
+com.agynamix.platform.httpd.HttpServer -> com.agynamix.platform.c.f:
+    java.util.Properties environment -> a
+    java.util.Properties access$000(com.agynamix.platform.httpd.HttpServer) -> a
+com.agynamix.platform.httpd.HttpServer$1 -> com.agynamix.platform.c.b:
+    java.net.ServerSocket val$ss -> a
+    com.agynamix.platform.httpd.HttpServer this$0 -> b
+    void run() -> run
+com.agynamix.platform.icons.PlatformIcons -> com.agynamix.platform.icons.PlatformIcons:
+    org.eclipse.jface.resource.ImageRegistry imageRegistry -> a
+    org.eclipse.swt.graphics.Image get(java.lang.String) -> a
+    org.eclipse.jface.resource.ImageDescriptor getDescriptor(java.lang.String) -> b
+    org.eclipse.jface.resource.ImageRegistry getImageRegistry() -> a
+com.agynamix.platform.impl.ConfigurationImpl -> com.agynamix.platform.impl.c:
+    java.util.prefs.Preferences userPrefs -> a
+    java.util.Properties defaultValues -> b
+    java.util.logging.Logger log -> c
+    java.util.Properties exportProperties() -> a
+    java.util.Properties exportDefaultProperties() -> b
+    java.lang.String getProperty(java.lang.String) -> a
+    java.util.List getProperyList(java.lang.String) -> d
+    int getInteger(java.lang.String) -> b
+    org.eclipse.swt.graphics.Rectangle getRectangle(java.lang.String) -> e
+    boolean getBoolean(java.lang.String) -> c
+    void setBoolean(java.lang.String,boolean) -> a
+    void setProperty(java.lang.String,java.lang.String) -> a
+    void setRectangle(java.lang.String,org.eclipse.swt.graphics.Rectangle) -> a
+    void setProperty(java.lang.String,java.lang.Object) -> a
+    java.lang.String getStringDefault(java.lang.String) -> f
+    long getLongDefault(java.lang.String) -> g
+com.agynamix.platform.impl.ConfigurationUtil -> com.agynamix.platform.impl.ConfigurationUtil:
+    void main(java.lang.String[]) -> main
+com.agynamix.platform.impl.PreferenceConfigAdapterImpl -> com.agynamix.platform.impl.a:
+    com.agynamix.platform.infra.IConfiguration config -> a
+    org.eclipse.core.runtime.ListenerList listeners -> b
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+    java.util.Properties loadDefaultProperties() -> a
+    java.util.Properties loadProperties() -> b
+com.agynamix.platform.impl.QueueManagerImpl -> com.agynamix.platform.impl.b:
+    java.util.Map queueMap -> a
+    void put(java.lang.String,java.lang.Object) -> a
+    void putAllReverse(java.lang.String,java.util.List) -> a
+    void putAll(java.lang.String,java.lang.Object[]) -> a
+    java.lang.Object take(java.lang.String) -> a
+    java.util.concurrent.BlockingQueue getQueueByName(java.lang.String) -> b
+com.agynamix.platform.infra.ApplicationBase -> com.agynamix.platform.d.s:
+    com.agynamix.platform.infra.ApplicationBase itsApplicationInstance -> a
+    com.agynamix.platform.infra.ApplicationContext applicationContext -> b
+    java.util.List exitListeners -> c
+    com.agynamix.platform.infra.ApplicationContext getContext() -> a
+    com.agynamix.platform.infra.ApplicationBase getInstance() -> b
+    void launch(java.lang.Class,com.agynamix.platform.infra.ApplicationContext,java.lang.String[]) -> a
+    void applicationSetup() -> c
+    void applicationInitialize() -> d
+    void prepareRun() -> e
+    com.agynamix.platform.frontend.gui.ApplicationGUI createApplicationGUI() -> f
+    void exit() -> g
+    void shutdown() -> h
+    void fireWillExit() -> i
+com.agynamix.platform.infra.ApplicationBase$ShutdownHandler -> com.agynamix.platform.d.z:
+    void run() -> run
+com.agynamix.platform.infra.ApplicationBase$UncaughtExceptionHandler -> com.agynamix.platform.d.q:
+    void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
+com.agynamix.platform.infra.ApplicationContext -> com.agynamix.platform.d.p:
+    org.eclipse.jface.resource.ImageRegistry imageRegistry -> c
+    org.eclipse.jface.resource.ColorRegistry colorRegistry -> a
+    org.eclipse.swt.dnd.Clipboard clipboard -> b
+    com.agynamix.platform.infra.IConfiguration configuration -> d
+    java.util.Map locatorMap -> e
+    void registerService(java.lang.String,java.lang.Object) -> a
+    java.lang.Object getService(java.lang.String) -> a
+    org.eclipse.jface.resource.ImageRegistry getImageRegistry() -> a
+    org.eclipse.swt.dnd.Clipboard getClipboard() -> b
+    com.agynamix.platform.infra.IConfiguration getConfiguration() -> c
+    com.agynamix.platform.concurrent.ThreadManager getThreadManager() -> d
+    com.agynamix.platform.frontend.gui.ApplicationGUI getApplicationGUI() -> e
+com.agynamix.platform.infra.ApplicationContext$1 -> com.agynamix.platform.d.f:
+    com.agynamix.platform.infra.ApplicationContext this$0 -> a
+    void run() -> run
+com.agynamix.platform.infra.ApplicationContext$2 -> com.agynamix.platform.d.a:
+    com.agynamix.platform.infra.ApplicationContext this$0 -> a
+    void run() -> run
+com.agynamix.platform.infra.ApplicationInfo -> com.agynamix.platform.d.k:
+    java.lang.String[] systemProps -> a
+    java.util.Properties properties -> b
+    java.lang.String getApplicationName() -> a
+    java.lang.String getApplicationVersion() -> b
+    java.lang.String getApplicationYears() -> c
+    java.lang.String getCompanyName() -> d
+    java.lang.String getCompanyEmail() -> e
+    java.lang.String getCompanyWww() -> f
+    java.lang.String getCompanyOrderUrl() -> g
+    java.lang.String getRepoRevision() -> h
+    java.lang.String getBuildNumber() -> i
+    java.lang.String getBuildTime() -> j
+    java.lang.String saveGet(java.lang.String) -> a
+    java.lang.String getApplicationInfo() -> k
+com.agynamix.platform.infra.DateUtils -> com.agynamix.platform.d.i:
+    java.util.Map formatMaps -> a
+    java.lang.String date2string(java.lang.String,java.util.Date) -> a
+    java.util.Date string2date(java.lang.String,java.lang.String) -> a
+    java.text.SimpleDateFormat getDateFormatter(java.util.Map,java.lang.String) -> a
+com.agynamix.platform.infra.ExecutorUtils -> com.agynamix.platform.d.r:
+    java.util.concurrent.ScheduledExecutorService scheduledThreadPool -> a
+    java.util.concurrent.ExecutorService fixedThreadPool -> b
+    java.util.concurrent.ExecutorService cachedThreadPool -> c
+    void addScheduledService(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit) -> a
+    void addFixedService(java.lang.Runnable) -> a
+    void addParallelTask(java.lang.Runnable) -> b
+    void shutdownScheduledService() -> a
+    void shutdownFixedService() -> b
+com.agynamix.platform.infra.FileUtils -> com.agynamix.platform.d.t:
+    java.util.logging.Logger log -> a
+    java.lang.String[] imageFileExtensions -> b
+    java.lang.String[] textFileExtensions -> c
+    java.lang.String[] zipExtension -> d
+    void copyRecursive(java.io.File,java.io.File) -> a
+    void writeTextToFile(java.io.File,java.lang.String,java.lang.String,boolean) -> a
+    void writeImageToFile(java.io.File,java.lang.String,org.eclipse.swt.graphics.ImageData,boolean) -> a
+    byte[] readImage(org.eclipse.swt.graphics.ImageData,int) -> a
+    byte[] loadFile(java.io.InputStream,java.lang.String) -> a
+    java.lang.String[] getTextFileExtensions(boolean) -> a
+    java.lang.String[] getImageFileExtensions() -> a
+    java.io.File writeTextToTempFile(com.agynamix.simidude.source.impl.TextSourceData) -> a
+    java.io.File writeImageToTempFile(com.agynamix.simidude.source.impl.ImageSourceData) -> a
+    boolean deleteRecursive(java.io.File) -> a
+    java.lang.String replaceLastExtension(java.lang.String,java.lang.String) -> a
+    java.lang.String getCommonSourcePath(java.lang.String) -> a
+    java.lang.String getRelativePath(java.lang.String,java.lang.String) -> b
+    void serialize(java.lang.Object,java.lang.String) -> a
+    java.lang.Object deserialize(java.lang.String) -> b
+com.agynamix.platform.infra.IConfiguration -> com.agynamix.platform.d.w:
+    java.lang.String getProperty(java.lang.String) -> a
+    int getInteger(java.lang.String) -> b
+    boolean getBoolean(java.lang.String) -> c
+    java.util.List getProperyList(java.lang.String) -> d
+    void setProperty(java.lang.String,java.lang.String) -> a
+    void setBoolean(java.lang.String,boolean) -> a
+    void setRectangle(java.lang.String,org.eclipse.swt.graphics.Rectangle) -> a
+    org.eclipse.swt.graphics.Rectangle getRectangle(java.lang.String) -> e
+    void setProperty(java.lang.String,java.lang.Object) -> a
+    java.util.Properties exportProperties() -> a
+    java.util.Properties exportDefaultProperties() -> b
+com.agynamix.platform.infra.IExitListener -> com.agynamix.platform.d.m:
+    boolean canExit$40066ec9() -> a
+com.agynamix.platform.infra.IPluginMenuAction -> com.agynamix.platform.d.x:
+    void run() -> a
+com.agynamix.platform.infra.IPreferenceConfigAdapter -> com.agynamix.platform.d.v:
+    java.util.Properties loadDefaultProperties() -> a
+    java.util.Properties loadProperties() -> b
+com.agynamix.platform.infra.IQueueManager -> com.agynamix.platform.d.j:
+    void put(java.lang.String,java.lang.Object) -> a
+    void putAll(java.lang.String,java.lang.Object[]) -> a
+    void putAllReverse(java.lang.String,java.util.List) -> a
+    java.lang.Object take(java.lang.String) -> a
+com.agynamix.platform.infra.PlatformColors -> com.agynamix.platform.d.A:
+    org.eclipse.jface.resource.ColorRegistry colorRegistry -> a
+    java.util.Map colorMap -> b
+    org.eclipse.swt.graphics.Color get(java.lang.String) -> a
+    org.eclipse.jface.resource.ColorRegistry getColorRegistry() -> a
+com.agynamix.platform.infra.PlatformException -> com.agynamix.platform.d.n:
+com.agynamix.platform.infra.PlatformUtils -> com.agynamix.platform.d.u:
+    java.lang.Object syncThreadResult -> a
+    com.agynamix.platform.infra.PlatformUtils$OS getOsName() -> a
+    boolean isMacOs() -> b
+    java.lang.String getApplicationDataDir() -> c
+    java.lang.String getApplicationCacheDir() -> d
+    void setStatusLineContribution(java.lang.String) -> b
+    void setStatusLineErrorMsg(java.lang.String) -> c
+    org.eclipse.jface.action.IStatusLineManager getStatusLine() -> e
+    void setConnected(java.lang.String) -> a
+    void setConnected(int) -> a
+    void setNotConnected() -> f
+    void showErrorMessageWithException(java.lang.String,java.lang.String,java.lang.Throwable) -> a
+    void showErrorMessage(java.lang.String,java.lang.String) -> a
+    boolean showOverwriteFilesDialog(java.io.File) -> a
+    void safeAsyncRunnable(java.lang.Runnable) -> a
+    void safeSyncRunnable(java.lang.Runnable) -> b
+com.agynamix.platform.infra.PlatformUtils$1 -> com.agynamix.platform.d.b:
+    java.lang.String val$msg -> a
+    void run() -> run
+com.agynamix.platform.infra.PlatformUtils$2 -> com.agynamix.platform.d.d:
+    java.lang.String val$msg -> a
+    void run() -> run
+com.agynamix.platform.infra.PlatformUtils$3 -> com.agynamix.platform.d.h:
+    java.lang.String val$title -> a
+    java.lang.String val$msg -> b
+    java.lang.Throwable val$t -> c
+    void run() -> run
+com.agynamix.platform.infra.PlatformUtils$7 -> com.agynamix.platform.d.c:
+    java.lang.String val$title -> a
+    java.lang.String val$msg -> b
+    void run() -> run
+com.agynamix.platform.infra.PlatformUtils$8 -> com.agynamix.platform.d.g:
+    java.io.File val$dest -> a
+    void run() -> run
+com.agynamix.platform.infra.PlatformUtils$OS -> com.agynamix.platform.d.e:
+    com.agynamix.platform.infra.PlatformUtils$OS unknown -> g
+    com.agynamix.platform.infra.PlatformUtils$OS win32 -> a
+    com.agynamix.platform.infra.PlatformUtils$OS win64 -> b
+    com.agynamix.platform.infra.PlatformUtils$OS macosx -> c
+    com.agynamix.platform.infra.PlatformUtils$OS macosx64 -> d
+    com.agynamix.platform.infra.PlatformUtils$OS linux_x86 -> e
+    com.agynamix.platform.infra.PlatformUtils$OS linux_x86_64 -> f
+    java.util.List osname -> h
+    java.util.List osarch -> i
+    com.agynamix.platform.infra.PlatformUtils$OS[] $VALUES -> j
+    com.agynamix.platform.infra.PlatformUtils$OS[] values() -> values
+    com.agynamix.platform.infra.PlatformUtils$OS valueOf(java.lang.String) -> valueOf
+    com.agynamix.platform.infra.PlatformUtils$OS parseOs(java.lang.String,java.lang.String) -> a
+    java.lang.String toString() -> toString
+com.agynamix.platform.infra.PluginMenuEntry -> com.agynamix.platform.d.y:
+    org.eclipse.swt.graphics.Image image -> a
+    java.lang.String mEntry -> b
+    com.agynamix.platform.infra.IPluginMenuAction menuAction -> c
+    java.lang.String getText() -> a
+    org.eclipse.swt.graphics.Image getImage() -> b
+    void setPluginMenuAction(com.agynamix.platform.infra.IPluginMenuAction) -> a
+    void action() -> c
+com.agynamix.platform.infra.Tupel -> com.agynamix.platform.d.o:
+    java.lang.Object value1 -> a
+    java.lang.Object value2 -> b
+    java.lang.Object getValue1() -> a
+    java.lang.Object getValue2() -> b
+com.agynamix.platform.infra.ZipUtils -> com.agynamix.platform.d.l:
+    java.util.logging.Logger log -> a
+    byte[] zipBuffer(java.lang.String,byte[]) -> a
+    java.io.File zipFile(java.io.File,java.io.File) -> a
+    void zipDirectory(java.io.File,java.lang.String,java.util.zip.ZipOutputStream) -> a
+    void zipFileEntry(java.io.File,java.lang.String,java.util.zip.ZipOutputStream) -> b
+com.agynamix.platform.log.ApplicationLog -> com.agynamix.platform.e.a:
+    java.lang.String logDirectory -> a
+    java.util.logging.Logger getLogger(java.lang.Class) -> a
+    java.util.logging.Logger getLogger(java.lang.String) -> a
+com.agynamix.platform.net.ClientListSynchronizer -> com.agynamix.platform.b.s:
+    java.util.logging.Logger log -> a
+    com.agynamix.platform.net.IConnector connector -> b
+    boolean shouldStop -> c
+    void run() -> run
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.platform.net.ClientNode -> com.agynamix.platform.b.o:
+    int hashCode -> g
+    java.util.UUID nodeId -> a
+    java.lang.String groupname -> b
+    java.net.InetAddress address -> c
+    int port -> d
+    java.util.Date creationDate -> e
+    java.util.Date inactiveSince -> f
+    java.util.Date shutdownDate -> h
+    java.net.InetAddress getAddress() -> a
+    java.lang.String toString() -> toString
+    java.util.UUID getNodeId() -> b
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    void setNodeInactive() -> c
+com.agynamix.platform.net.ConnectionCtx -> com.agynamix.platform.b.a:
+    java.net.Socket socket -> b
+    java.io.BufferedInputStream istream -> c
+    java.io.BufferedOutputStream ostream -> d
+    com.agynamix.platform.net.protocol.NodeCommandUtils nodeCommandUtils -> a
+    void disconnect() -> a
+    void close() -> b
+    java.io.BufferedOutputStream getOutputStream() -> c
+    java.io.BufferedInputStream getInputStream() -> d
+    java.lang.String getHostAddress() -> e
+    com.agynamix.platform.net.protocol.NodeCommandUtils getNodeCommandUtils() -> f
+    java.lang.Object invoke(com.agynamix.platform.net.IRemoteCommand) -> a
+    java.lang.String escapeHtmlFull(java.lang.String) -> a
+com.agynamix.platform.net.ConnectionUtils -> com.agynamix.platform.b.n:
+    java.util.logging.Logger log -> a
+    java.lang.Object miscSemaphore -> b
+    void safeAddToClientList(com.agynamix.platform.net.ClientNode,java.util.List) -> a
+    byte[] toByteArray(java.lang.String[]) -> a
+    void clearInactiveFromClientList(com.agynamix.platform.net.IConnector,java.util.List) -> a
+    com.agynamix.platform.net.ConnectionCtx connectTo(com.agynamix.platform.net.IConnector,com.agynamix.platform.net.ClientNode) -> a
+    com.agynamix.platform.net.ClientNode requestClientId(com.agynamix.platform.net.IConnector,java.lang.String,int) -> a
+    java.net.Socket connectSocket(java.net.InetSocketAddress) -> a
+    void setConnectionStatus(java.util.List) -> a
+com.agynamix.platform.net.Connector -> com.agynamix.platform.b.l:
+    java.lang.String groupName -> a
+    java.lang.String groupPassword -> b
+    int helloPort -> c
+    int serverPort -> d
+    java.util.UUID nodeId -> e
+    java.util.concurrent.BlockingQueue requestorQueue -> f
+    com.agynamix.platform.net.PingService pingService -> g
+    com.agynamix.platform.net.PingServiceListener pingListener -> h
+    com.agynamix.platform.net.ClientListSynchronizer clientListSynchronizer -> i
+    com.agynamix.platform.net.ConnectorServer connectorServer -> j
+    com.agynamix.platform.net.ContactRequestorService contactRequestorService -> k
+    com.agynamix.platform.net.ClientNode myOwnNode -> l
+    java.util.List connectedClients -> m
+    java.util.List packetReceivedListeners -> n
+    java.util.logging.Logger log -> o
+    void initialize() -> h
+    void run() -> i
+    void shutdown() -> j
+    com.agynamix.platform.net.ClientNode getMyOwnNode() -> e
+    int getHelloPort() -> a
+    java.util.concurrent.BlockingQueue getRequestorQueue() -> c
+    java.util.List getConnectedClientList() -> d
+    com.agynamix.platform.net.ClientNode getClientNode(java.util.UUID) -> a
+    int getServerPort() -> b
+    java.lang.String getGroupName() -> g
+    java.lang.String getGroupPassword() -> f
+    void firePacketReceived(com.agynamix.platform.net.protocol.NodeCommand) -> a
+    void signalGoodBye(com.agynamix.platform.net.ClientNode) -> a
+com.agynamix.platform.net.ConnectorServer -> com.agynamix.platform.b.j:
+    java.util.concurrent.ExecutorService serverHandlerService -> a
+    com.agynamix.platform.net.IConnector connector -> b
+    java.net.ServerSocket serverSocket -> c
+    boolean shouldStop -> d
+    void run() -> run
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.platform.net.ConnectorServerHandler -> com.agynamix.platform.b.d:
+    com.agynamix.platform.net.ConnectionCtx connectionCtx -> a
+    com.agynamix.platform.net.IConnector connector -> b
+    java.util.logging.Logger log -> c
+    void run() -> run
+com.agynamix.platform.net.ContactRequestorService -> com.agynamix.platform.b.g:
+    java.util.logging.Logger log -> a
+    boolean shouldStop -> b
+    com.agynamix.platform.net.IConnector connector -> c
+    void run() -> run
+    void sendConnectedClientList(com.agynamix.platform.net.ClientNode,java.util.List) -> a
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.platform.net.FatalNetworkException -> com.agynamix.platform.b.r:
+com.agynamix.platform.net.IConnector -> com.agynamix.platform.b.i:
+    int getHelloPort() -> a
+    int getServerPort() -> b
+    java.util.concurrent.BlockingQueue getRequestorQueue() -> c
+    java.util.List getConnectedClientList() -> d
+    com.agynamix.platform.net.ClientNode getMyOwnNode() -> e
+    java.lang.String getGroupPassword() -> f
+    java.lang.String getGroupName() -> g
+    void firePacketReceived(com.agynamix.platform.net.protocol.NodeCommand) -> a
+    com.agynamix.platform.net.ClientNode getClientNode(java.util.UUID) -> a
+com.agynamix.platform.net.IRemoteCommand -> com.agynamix.platform.b.c:
+com.agynamix.platform.net.NetUtils -> com.agynamix.platform.b.p:
+    java.util.logging.Logger log -> a
+    java.util.List getHostAddresses() -> a
+    java.net.InetAddress getPrimaryHostAddress() -> b
+    java.lang.String getLocalHostAddress() -> c
+    com.agynamix.platform.net.ClientNode bcBufferToNode(byte[]) -> a
+    byte[] nodeToBcBuffer(com.agynamix.platform.net.ClientNode) -> a
+    java.lang.String encodeField(java.lang.String) -> a
+    java.lang.String decodeField(java.lang.String) -> b
+    java.lang.String decodeField(byte[],int,int) -> a
+    byte[] intToByteArray(int) -> a
+    int byteArrayToInt(byte[],int) -> a
+com.agynamix.platform.net.NetworkAuthException -> com.agynamix.platform.b.b:
+com.agynamix.platform.net.NetworkProtocolException -> com.agynamix.platform.b.q:
+com.agynamix.platform.net.PingService -> com.agynamix.platform.b.m:
+    com.agynamix.platform.net.IConnector connector -> a
+    boolean shouldStop -> b
+    java.util.logging.Logger log -> c
+    void run() -> run
+    java.net.InetAddress getBroadcastAddress(java.net.InetAddress) -> a
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.platform.net.PingServiceListener -> com.agynamix.platform.b.k:
+    boolean shouldStop -> a
+    com.agynamix.platform.net.IConnector connector -> b
+    java.net.DatagramSocket listenSocket -> c
+    java.util.List myAddresses -> d
+    java.util.logging.Logger log -> e
+    void run() -> run
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.platform.net.RequestClientIdCommand -> com.agynamix.platform.b.h:
+com.agynamix.platform.net.SignalGoodByeCommand -> com.agynamix.platform.b.e:
+com.agynamix.platform.net.TransportClientListCommand -> com.agynamix.platform.b.f:
+com.agynamix.platform.net.protocol.Ackn -> com.agynamix.platform.b.a.h:
+com.agynamix.platform.net.protocol.Acpt -> com.agynamix.platform.b.a.f:
+    java.util.UUID nodeId -> a
+    byte[] toByteArray() -> a
+com.agynamix.platform.net.protocol.Auth -> com.agynamix.platform.b.a.d:
+    java.lang.String groupname -> a
+    java.lang.String password -> c
+    byte[] toByteArray() -> a
+    java.lang.String getGroupname() -> b
+    java.lang.String getPassword() -> c
+com.agynamix.platform.net.protocol.Data -> com.agynamix.platform.b.a.b:
+    java.lang.String filename -> a
+    long length -> c
+    byte[] toByteArray() -> a
+com.agynamix.platform.net.protocol.Expt -> com.agynamix.platform.b.a.c:
+com.agynamix.platform.net.protocol.NodeCommand -> com.agynamix.platform.b.a.k:
+    java.lang.String command -> b
+    byte[] toByteArray() -> a
+    byte[] toPacket() -> d
+com.agynamix.platform.net.protocol.NodeCommandUtils -> com.agynamix.platform.b.a.e:
+    com.agynamix.platform.net.ConnectionCtx connectionCtx -> a
+    com.agynamix.platform.net.IConnector connector -> b
+    void sendRejt() -> a
+    java.lang.Object invoke(com.agynamix.platform.net.IRemoteCommand) -> a
+    com.agynamix.platform.net.protocol.NodeCommand receiveCommand() -> b
+    com.agynamix.platform.net.protocol.NodeCommand receiveCommand(java.lang.String[]) -> a
+    byte[] receivePacket(java.lang.String[]) -> b
+    byte[] readPacket(byte[],int) -> a
+    void sendPacket(com.agynamix.platform.net.protocol.NodeCommand) -> a
+    void authenticate() -> c
+com.agynamix.platform.net.protocol.Objt -> com.agynamix.platform.b.a.i:
+    java.lang.Object getObject() -> b
+com.agynamix.platform.net.protocol.Quit -> com.agynamix.platform.b.a.a:
+com.agynamix.platform.net.protocol.Rcmd -> com.agynamix.platform.b.a.g:
+com.agynamix.platform.net.protocol.Rejt -> com.agynamix.platform.b.a.l:
+com.agynamix.platform.net.protocol.SerializedDataCommand -> com.agynamix.platform.b.a.j:
+    java.lang.Object object -> a
+    byte[] toByteArray() -> a
+    java.lang.Object getObject() -> b
+com.agynamix.simidude.Simidude -> com.agynamix.simidude.Simidude:
+    com.agynamix.simidude.clipboard.SourceDataManager sourceDataManager -> a
+    com.agynamix.simidude.source.ISource clipboardMonitor$bebbf8d -> b
+    java.util.logging.Logger log -> c
+    void applicationSetup() -> c
+    void applicationInitialize() -> d
+    void shutdown() -> h
+    void prepareRun() -> e
+    com.agynamix.platform.frontend.gui.ApplicationGUI createApplicationGUI() -> f
+    void main(java.lang.String[]) -> main
+    void access$000(com.agynamix.simidude.Simidude,com.agynamix.simidude.source.ISourceData,boolean) -> a
+com.agynamix.simidude.Simidude$1 -> com.agynamix.simidude.c:
+    void exited(int) -> exited
+    void prepareShutdown() -> prepareShutdown
+com.agynamix.simidude.Simidude$2 -> com.agynamix.simidude.b:
+    com.agynamix.simidude.Simidude this$0 -> a
+    void sourceDataChanged(com.agynamix.simidude.source.ISourceData) -> a
+com.agynamix.simidude.Simidude$3 -> com.agynamix.simidude.a:
+    com.agynamix.simidude.Simidude this$0 -> a
+    void itemActivated(com.agynamix.simidude.clipboard.IClipboardItem) -> a
+com.agynamix.simidude.clipboard.ClipboardItemFactory -> com.agynamix.simidude.a.c:
+    com.agynamix.simidude.clipboard.SourceDataManager sourceDataManager -> a
+    com.agynamix.simidude.clipboard.IClipboardItem createItemFromSourceData(com.agynamix.simidude.clipboard.SourceDataManager,com.agynamix.simidude.source.ISourceData) -> a
+    org.eclipse.swt.widgets.Control createControl(org.eclipse.swt.widgets.Composite) -> a
+com.agynamix.simidude.clipboard.ClipboardItemFactory$1 -> com.agynamix.simidude.a.g:
+    int[] $SwitchMap$com$agynamix$simidude$source$ISourceData$SourceType -> a
+com.agynamix.simidude.clipboard.ClipboardMonitorBase -> com.agynamix.simidude.a.q:
+    boolean itemActivated -> a
+    com.agynamix.simidude.source.ISourceData[] sourceDataInTransit -> b
+    com.agynamix.simidude.source.ISourceData activatedSourceData -> c
+    void itemActivated(com.agynamix.simidude.source.ISourceData) -> a
+    int getSleepTime() -> c
+    com.agynamix.simidude.source.ISourceData[] saveProcessClipboard(org.eclipse.swt.dnd.Clipboard) -> a
+com.agynamix.simidude.clipboard.ClipboardMonitorBase$1 -> com.agynamix.simidude.a.K:
+    org.eclipse.swt.dnd.Clipboard val$clipboard -> a
+    com.agynamix.simidude.clipboard.ClipboardMonitorBase this$0 -> b
+    void run() -> run
+com.agynamix.simidude.clipboard.ClipboardMonitorFactory$1 -> com.agynamix.simidude.a.w:
+    int[] $SwitchMap$com$agynamix$platform$infra$PlatformUtils$OS -> a
+com.agynamix.simidude.clipboard.ClipboardTable -> com.agynamix.simidude.a.M:
+    com.agynamix.simidude.clipboard.SourceDataManager sourceDataManager -> a
+    org.eclipse.jface.viewers.TableViewer tableViewer -> b
+    org.eclipse.jface.viewers.TableViewerColumn itemColumn -> c
+    org.eclipse.swt.widgets.Composite tableParent -> d
+    boolean dragInProgress -> e
+    void addSelectionChangeListener(org.eclipse.jface.viewers.ISelectionChangedListener) -> a
+    org.eclipse.swt.widgets.Table getTable() -> a
+    org.eclipse.jface.viewers.TableViewer getTableViewer() -> b
+    boolean isDragInProgress() -> c
+    void setDragInProgress(boolean) -> a
+    void openSelectedEntry(com.agynamix.simidude.clipboard.IClipboardItem) -> a
+com.agynamix.simidude.clipboard.ClipboardTable$1 -> com.agynamix.simidude.a.i:
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> a
+    void modelChanged$2838e5ad() -> a
+    com.agynamix.simidude.source.ISource newClipboardMonitor$5cf0b5d2() -> b
+com.agynamix.simidude.clipboard.ClipboardTable$1$1 -> com.agynamix.simidude.a.H:
+    com.agynamix.simidude.clipboard.ClipboardTable$1 this$1 -> a
+    void run() -> run
+com.agynamix.simidude.clipboard.ClipboardTable$10 -> com.agynamix.simidude.a.v:
+    org.eclipse.swt.widgets.MenuItem val$downloadContentsItem -> a
+    org.eclipse.swt.widgets.MenuItem val$activateItem -> b
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> c
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> d
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+com.agynamix.simidude.clipboard.ClipboardTable$11 -> com.agynamix.simidude.a.y:
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> a
+    void doubleClick(org.eclipse.jface.viewers.DoubleClickEvent) -> doubleClick
+com.agynamix.simidude.clipboard.ClipboardTable$12 -> com.agynamix.simidude.a.z:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void keyPressed(org.eclipse.swt.events.KeyEvent) -> keyPressed
+com.agynamix.simidude.clipboard.ClipboardTable$13 -> com.agynamix.simidude.a.u:
+    com.agynamix.simidude.source.impl.FileSourceData val$fsd -> a
+    void run() -> run
+com.agynamix.simidude.clipboard.ClipboardTable$13$1 -> com.agynamix.simidude.a.l:
+    com.agynamix.simidude.clipboard.ClipboardTable$13 this$1 -> a
+    void run() -> run
+com.agynamix.simidude.clipboard.ClipboardTable$2 -> com.agynamix.simidude.a.d:
+    boolean even -> a
+    org.eclipse.swt.graphics.Color oddColor -> b
+    com.agynamix.simidude.clipboard.OptimizedIndexSearcher val$searcher -> c
+    java.lang.String getText(java.lang.Object) -> getText
+    org.eclipse.swt.graphics.Image getImage(java.lang.Object) -> getImage
+    org.eclipse.swt.graphics.Color getBackground(java.lang.Object) -> getBackground
+    java.lang.String getToolTipText(java.lang.Object) -> getToolTipText
+    org.eclipse.swt.graphics.Point getToolTipShift(java.lang.Object) -> getToolTipShift
+    int getToolTipDisplayDelayTime(java.lang.Object) -> getToolTipDisplayDelayTime
+    int getToolTipTimeDisplayed(java.lang.Object) -> getToolTipTimeDisplayed
+    void update(org.eclipse.jface.viewers.ViewerCell) -> update
+com.agynamix.simidude.clipboard.ClipboardTable$3 -> com.agynamix.simidude.a.p:
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> a
+    void controlResized(org.eclipse.swt.events.ControlEvent) -> controlResized
+com.agynamix.simidude.clipboard.ClipboardTable$4 -> com.agynamix.simidude.a.b:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTable$5 -> com.agynamix.simidude.a.t:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTable$6 -> com.agynamix.simidude.a.f:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTable$7 -> com.agynamix.simidude.a.h:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTable$8 -> com.agynamix.simidude.a.k:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTable$9 -> com.agynamix.simidude.a.m:
+    org.eclipse.jface.viewers.TableViewer val$tableViewer -> a
+    com.agynamix.simidude.clipboard.ClipboardTable this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTableContentProvider -> com.agynamix.simidude.a.x:
+    void dispose() -> dispose
+    void inputChanged(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> inputChanged
+    java.lang.Object[] getElements(java.lang.Object) -> getElements
+com.agynamix.simidude.clipboard.ClipboardTableSearchBox$1 -> com.agynamix.simidude.a.N:
+    org.eclipse.swt.widgets.Text val$searchBox -> a
+    com.agynamix.simidude.clipboard.ClipboardItemFactory this$0$181e9bd5 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTableSearchBox$2 -> com.agynamix.simidude.a.e:
+    org.eclipse.swt.widgets.Text val$searchBox -> a
+    com.agynamix.simidude.clipboard.ClipboardItemFactory this$0$181e9bd5 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.agynamix.simidude.clipboard.ClipboardTableSearchBox$3 -> com.agynamix.simidude.a.I:
+    org.eclipse.swt.widgets.Text val$searchBox -> a
+    com.agynamix.simidude.clipboard.ClipboardItemFactory this$0$181e9bd5 -> b
+    void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent) -> widgetDefaultSelected
+com.agynamix.simidude.clipboard.ClipboardTableSearchBox$4 -> com.agynamix.simidude.a.A:
+    org.eclipse.swt.widgets.Text val$searchBox -> a
+    com.agynamix.simidude.clipboard.ClipboardItemFactory this$0$181e9bd5 -> b
+    void keyPressed(org.eclipse.swt.events.KeyEvent) -> keyPressed
+    void keyReleased(org.eclipse.swt.events.KeyEvent) -> keyReleased
+com.agynamix.simidude.clipboard.ClipboardViewerFilter -> com.agynamix.simidude.a.o:
+    java.lang.String searchStr -> a
+    boolean select(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> select
+    java.lang.String toString() -> toString
+com.agynamix.simidude.clipboard.FileClipboardItem -> com.agynamix.simidude.a.n:
+    com.agynamix.simidude.source.impl.FileSourceData sourceData -> a
+    com.agynamix.simidude.clipboard.SourceDataManager sourceDataManager -> b
+    org.eclipse.swt.graphics.Image thumbnail -> c
+    org.eclipse.swt.graphics.Image downloadNeededThumbnail -> d
+    java.lang.String getDescription() -> a
+    java.lang.String getShortDescription() -> b
+    org.eclipse.swt.graphics.Image getImage() -> c
+    java.lang.String getTooltip() -> d
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> e
+    com.agynamix.simidude.source.ISourceData getSourceData() -> f
+    com.agynamix.simidude.clipboard.IClipboardItem deleteContents() -> g
+com.agynamix.simidude.clipboard.IClipboardItem -> com.agynamix.simidude.a.L:
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> e
+    java.lang.String getDescription() -> a
+    java.lang.String getShortDescription() -> b
+    java.lang.String getTooltip() -> d
+    org.eclipse.swt.graphics.Image getImage() -> c
+    com.agynamix.simidude.source.ISourceData getSourceData() -> f
+    com.agynamix.simidude.clipboard.IClipboardItem deleteContents() -> g
+com.agynamix.simidude.clipboard.ImageClipboardItem -> com.agynamix.simidude.a.r:
+    com.agynamix.simidude.source.impl.ImageSourceData sourceData -> a
+    org.eclipse.swt.graphics.Image cachedThumbnail -> b
+    java.lang.String tooltip -> c
+    java.lang.String getDescription() -> a
+    org.eclipse.swt.graphics.Image getImage() -> c
+    java.lang.String getShortDescription() -> b
+    com.agynamix.simidude.source.ISourceData getSourceData() -> f
+    java.lang.String getTooltip() -> d
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> e
+    com.agynamix.simidude.clipboard.IClipboardItem deleteContents() -> g
+com.agynamix.simidude.clipboard.OptimizedIndexSearcher -> com.agynamix.simidude.a.F:
+    int lastIndex -> a
+    boolean isEven(org.eclipse.swt.widgets.TableItem) -> a
+com.agynamix.simidude.clipboard.PollingClipboardMonitor -> com.agynamix.simidude.a.B:
+    org.eclipse.swt.dnd.Clipboard clipboard -> d
+    com.agynamix.simidude.source.ISourceData[] currentSourceData -> e
+    com.agynamix.simidude.source.ISourceData[] currentCompareSourceData -> f
+    boolean newDataAvailable -> g
+    boolean clipboardMonitorEnabled -> h
+    boolean isClipboardMonitorEnabled() -> d
+    void setClipboardMonitorEnabled(boolean) -> a
+    boolean isClipboardEmpty() -> e
+    com.agynamix.simidude.source.ISourceData[] getData() -> b
+    boolean isDataAvailable() -> a
+    int getSleepTime() -> c
+    org.eclipse.swt.dnd.Clipboard getClipboard() -> f
+    com.agynamix.simidude.source.ISourceData[] createEqualsCopy(com.agynamix.simidude.source.ISourceData[]) -> a
+com.agynamix.simidude.clipboard.SourceDataManager -> com.agynamix.simidude.a.s:
+    com.agynamix.simidude.source.ISource clipboardMonitor$bebbf8d -> c
+    java.util.List clipboardItems -> a
+    java.util.List removedClipboardItems -> d
+    java.util.List downloadsInProgress -> e
+    java.util.List modelChangeListeners -> b
+    java.util.List itemActivationListeners -> f
+    org.eclipse.swt.dnd.Clipboard clipboard -> g
+    com.agynamix.simidude.clipboard.ClipboardViewerFilter currentViewerFilter -> h
+    com.agynamix.simidude.frontend.ctrl.SourceDataDialogController sourceDataDialogController -> i
+    void addItemActivationListener(com.agynamix.simidude.infra.IItemActivationListener) -> a
+    void addSelectionChangedListener(org.eclipse.jface.viewers.ISelectionChangedListener) -> a
+    java.util.List getClipboardItems() -> a
+    void sourceDataChanged(com.agynamix.simidude.source.ISourceData) -> a
+    void addItemTimeDesc(java.util.List,com.agynamix.simidude.source.ISourceData) -> a
+    void activateItem(int) -> a
+    com.agynamix.simidude.clipboard.IClipboardItem getSelectedItem() -> b
+    int getSelectionIndex() -> c
+    void activateItem() -> d
+    void activateItem(com.agynamix.simidude.clipboard.IClipboardItem) -> a
+    com.agynamix.simidude.clipboard.IClipboardItem removeSelectedEntry() -> e
+    com.agynamix.simidude.clipboard.IClipboardItem removeItem(com.agynamix.simidude.clipboard.IClipboardItem) -> b
+    void removeAll() -> f
+    void contentsReceived() -> g
+    void fireDataChanged(java.lang.Object,java.lang.Object) -> a
+    void setClipboardMonitorEnabled(boolean) -> a
+    boolean isClipboardMonitorEnabled() -> h
+    boolean isClipboardEmpty() -> i
+    java.util.List getSourceDataStubEntries() -> j
+    java.util.List getRemovedSourceDataStubEntries() -> k
+    com.agynamix.simidude.clipboard.IClipboardItem getClipboardItem(com.agynamix.simidude.source.SourceDataStub) -> a
+    com.agynamix.simidude.clipboard.IClipboardItem getClipboardItem(int) -> b
+    boolean isRetrieveContentsNeeded(com.agynamix.simidude.clipboard.IClipboardItem) -> c
+    void setDownloadInProgress(com.agynamix.simidude.source.ISourceData,boolean) -> a
+    boolean isDownloadInProgress(com.agynamix.simidude.source.ISourceData) -> b
+    void setSourceDataDialogController(com.agynamix.simidude.frontend.ctrl.SourceDataDialogController) -> a
+    void filterClipboardItems(java.lang.String) -> a
+    void saveClipboardItemAs(com.agynamix.simidude.clipboard.IClipboardItem,boolean) -> a
+    void saveAs(java.lang.String,java.lang.String,com.agynamix.simidude.source.ISourceData,boolean) -> a
+    void saveSelectEntry(int) -> c
+com.agynamix.simidude.clipboard.SourceDataManager$1 -> com.agynamix.simidude.a.j:
+    java.lang.String val$path2 -> a
+    java.lang.String val$entryName2 -> b
+    com.agynamix.simidude.clipboard.IClipboardItem val$item -> c
+    boolean val$compress -> d
+    com.agynamix.simidude.clipboard.SourceDataManager this$0 -> e
+    void run() -> run
+com.agynamix.simidude.clipboard.SourceDataManager$2 -> com.agynamix.simidude.a.J:
+    org.eclipse.core.runtime.IProgressMonitor val$pm -> a
+    java.lang.String val$path -> b
+    void run() -> run
+com.agynamix.simidude.clipboard.SourceDataManager$3 -> com.agynamix.simidude.a.G:
+    boolean val$compress -> a
+    java.io.File val$src -> b
+    java.io.File val$dest -> c
+    com.agynamix.simidude.source.impl.FileSourceData val$fsd -> d
+    org.eclipse.core.runtime.IStatus run(org.eclipse.core.runtime.IProgressMonitor) -> run
+com.agynamix.simidude.clipboard.SourceDataManager$4 -> com.agynamix.simidude.a.E:
+    org.eclipse.core.runtime.IProgressMonitor val$pm -> a
+    void done(org.eclipse.core.runtime.jobs.IJobChangeEvent) -> done
+com.agynamix.simidude.clipboard.SourceDataManager$4$1 -> com.agynamix.simidude.a.a:
+    com.agynamix.simidude.clipboard.SourceDataManager$4 this$1 -> a
+    void run() -> run
+com.agynamix.simidude.clipboard.SourceDataManager$5 -> com.agynamix.simidude.a.D:
+    int[] $SwitchMap$com$agynamix$simidude$source$ISourceData$SourceType -> a
+com.agynamix.simidude.clipboard.TextClipboardItem -> com.agynamix.simidude.a.C:
+    com.agynamix.simidude.source.impl.TextSourceData sourceData -> a
+    java.lang.String getDescription() -> a
+    java.lang.String getShortDescription() -> b
+    org.eclipse.swt.graphics.Image getImage() -> c
+    java.lang.String getTooltip() -> d
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> e
+    com.agynamix.simidude.source.ISourceData getSourceData() -> f
+    java.lang.String getSubstring(java.lang.String,int,java.lang.String) -> a
+    com.agynamix.simidude.clipboard.IClipboardItem deleteContents() -> g
+com.agynamix.simidude.frontend.action.AboutAction -> com.agynamix.simidude.f.a.b:
+    org.eclipse.jface.window.ApplicationWindow window -> a
+    void run() -> run
+com.agynamix.simidude.frontend.action.ShowOnlineHelpAction -> com.agynamix.simidude.f.a.a:
+    void run() -> run
+com.agynamix.simidude.frontend.action.ToggleMonitorClipboardAction -> com.agynamix.simidude.f.a.c:
+    void run() -> run
+com.agynamix.simidude.frontend.ctrl.SourceDataDialogController -> com.agynamix.simidude.f.c.a:
+    com.agynamix.simidude.frontend.gui.ISourceDataDialogView sourceDataDataView -> a
+    void addSelectionChangedListener(org.eclipse.jface.viewers.ISelectionChangedListener) -> a
+    org.eclipse.swt.widgets.Composite createContent(org.eclipse.swt.widgets.Composite) -> a
+    com.agynamix.simidude.clipboard.ClipboardTable getClipboardTable() -> a
+    org.eclipse.swt.widgets.Control getCustomToolbar() -> b
+com.agynamix.simidude.frontend.gui.ClipboardTableDragSource -> com.agynamix.simidude.f.b.e:
+    com.agynamix.simidude.clipboard.ClipboardTable clipboardTable -> a
+    org.eclipse.jface.viewers.TableViewer tableViewer -> b
+    com.agynamix.simidude.clipboard.SourceDataManager sourceDataManager -> c
+    org.eclipse.swt.dnd.DragSource dragSource -> d
+    org.eclipse.swt.dnd.Transfer[] currentTransfer -> e
+    java.util.logging.Logger log -> f
+    void dragStart(org.eclipse.swt.dnd.DragSourceEvent) -> dragStart
+    void dragSetData(org.eclipse.swt.dnd.DragSourceEvent) -> dragSetData
+    com.agynamix.simidude.clipboard.IClipboardItem getSelectedItem() -> a
+    void dragFinished(org.eclipse.swt.dnd.DragSourceEvent) -> dragFinished
+com.agynamix.simidude.frontend.gui.ClipboardTableDragSource$1 -> com.agynamix.simidude.f.b.b:
+    int[] $SwitchMap$com$agynamix$simidude$source$ISourceData$SourceType -> a
+com.agynamix.simidude.frontend.gui.ClipboardTableDropTarget -> com.agynamix.simidude.f.b.f:
+    com.agynamix.simidude.clipboard.ClipboardTable clipboardTable -> a
+    org.eclipse.jface.viewers.TableViewer tableViewer -> b
+    void dragEnter(org.eclipse.swt.dnd.DropTargetEvent) -> dragEnter
+    void drop(org.eclipse.swt.dnd.DropTargetEvent) -> drop
+com.agynamix.simidude.frontend.gui.ISourceDataDialogView -> com.agynamix.simidude.f.b.d:
+    com.agynamix.simidude.clipboard.ClipboardTable clipboardTable -> a
+    org.eclipse.swt.widgets.Composite toolbar -> b
+    org.eclipse.swt.widgets.Composite createContent(org.eclipse.swt.widgets.Composite) -> a
+    com.agynamix.simidude.clipboard.ClipboardTable getClipboardTable() -> a
+    org.eclipse.swt.widgets.Control getCustomToolbar() -> b
+    void addSelectionChangedListener(org.eclipse.jface.viewers.ISelectionChangedListener) -> a
+com.agynamix.simidude.frontend.gui.SimidudeApplicationTray -> com.agynamix.simidude.f.b.a:
+com.agynamix.simidude.frontend.gui.SimidudeGUI -> com.agynamix.simidude.f.b.c:
+    com.agynamix.simidude.frontend.gui.ISourceDataDialogView sourceDataView$6f677a7c -> e
+    com.agynamix.simidude.frontend.ctrl.SourceDataDialogController sourceDataController -> f
+    org.eclipse.swt.graphics.Point getInitialShellSize() -> a
+    org.eclipse.swt.graphics.Image getShellImage() -> b
+    java.lang.String getInitialStatusLine() -> c
+    org.eclipse.swt.widgets.Control fillMainWindow(org.eclipse.swt.widgets.Composite) -> a
+    org.eclipse.swt.widgets.Control getCustomToolbar() -> d
+    com.agynamix.platform.frontend.gui.ApplicationTray createApplicationTray(org.eclipse.jface.window.Window,org.eclipse.swt.widgets.Shell,org.eclipse.swt.graphics.Image) -> a
+com.agynamix.simidude.impl.CacheCleaner -> com.agynamix.simidude.d.a:
+    java.lang.String cacheRoot -> a
+    java.util.logging.Logger log -> b
+    void run() -> run
+    boolean isReferenced(com.agynamix.simidude.clipboard.SourceDataManager,java.lang.String) -> a
+com.agynamix.simidude.impl.ContentsCacheManagerImpl -> com.agynamix.simidude.d.b:
+    java.util.logging.Logger log -> a
+    java.lang.String cacheDirectoryStr -> b
+    java.io.File cacheDirectory -> c
+    java.io.File itsFileRoot -> d
+    java.io.File firstContentsElementInCache -> e
+    java.lang.String itsCommonSourcePath -> f
+    boolean isFirstItem -> g
+    java.io.OutputStream currentOutputStream -> h
+    boolean insideTransaction -> i
+    java.io.File createTempFile(java.lang.String) -> a
+    void begin() -> a
+    com.agynamix.simidude.infra.IContentsCacheInfo finish() -> b
+    void abort() -> c
+    void write(com.agynamix.simidude.source.SourceDataContents) -> a
+    void writeDirectoryToCache(java.io.File,com.agynamix.simidude.source.SourceDataContents) -> a
+    void removeContentsFromCache(com.agynamix.simidude.infra.IContentsCacheInfo) -> a
+com.agynamix.simidude.impl.SimidudeApplicationContext -> com.agynamix.simidude.d.c:
+    com.agynamix.platform.infra.IQueueManager getQueueManager() -> f
+    com.agynamix.simidude.clipboard.SourceDataManager getSourceDataManager() -> g
+    com.agynamix.simidude.infra.ModelProvider getModelProvider() -> h
+    com.agynamix.simidude.remote.RemoteConnector getRemoteConnector() -> i
+com.agynamix.simidude.infra.CacheManagerFactory -> com.agynamix.simidude.e.a:
+    com.agynamix.simidude.infra.IContentsCacheManager commonCacheManager -> a
+    java.util.List inTransitDirectories -> b
+    com.agynamix.simidude.infra.IContentsCacheManager newContentsCacheManager() -> a
+    com.agynamix.simidude.infra.IContentsCacheManager commonContentsCacheManager() -> c
+    java.io.File createTempFile(java.lang.String) -> a
+    void removeContentsFromCache(com.agynamix.simidude.infra.IContentsCacheInfo) -> a
+    java.lang.Runnable newCacheCleaner() -> b
+    void addInTransitCacheDirectory(java.io.File) -> a
+    void removeInTransitCacheDirectory(java.io.File) -> b
+    boolean isInTransitCacheDirectory(java.io.File) -> c
+com.agynamix.simidude.infra.IContentsCacheInfo -> com.agynamix.simidude.e.c:
+    java.io.File itsFile -> a
+    java.lang.String getFilenameInCache() -> a
+com.agynamix.simidude.infra.IContentsCacheManager -> com.agynamix.simidude.e.d:
+    void begin() -> a
+    void write(com.agynamix.simidude.source.SourceDataContents) -> a
+    com.agynamix.simidude.infra.IContentsCacheInfo finish() -> b
+    void abort() -> c
+    java.io.File createTempFile(java.lang.String) -> a
+    void removeContentsFromCache(com.agynamix.simidude.infra.IContentsCacheInfo) -> a
+com.agynamix.simidude.infra.IItemActivationListener -> com.agynamix.simidude.e.g:
+    void itemActivated(com.agynamix.simidude.clipboard.IClipboardItem) -> a
+com.agynamix.simidude.infra.IModelChangeListener -> com.agynamix.simidude.e.i:
+    void modelChanged$2838e5ad() -> a
+com.agynamix.simidude.infra.ModelProvider -> com.agynamix.simidude.e.e:
+    java.util.UUID senderId -> b
+    boolean preferenceDialogChanges -> a
+    java.util.UUID getSenderId() -> a
+    void retrieveContentsForProxyObject(com.agynamix.simidude.source.ISourceData) -> a
+    void retrieveContentsForProxyObject(com.agynamix.simidude.source.ISourceData,java.lang.Runnable) -> a
+    void openPreferencesDialog(org.eclipse.swt.widgets.Shell) -> a
+    void networkRemoveItem(com.agynamix.simidude.source.SourceDataStub) -> a
+com.agynamix.simidude.infra.ModelProvider$1 -> com.agynamix.simidude.e.b:
+    com.agynamix.simidude.infra.ModelProvider this$0 -> a
+    void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> a
+com.agynamix.simidude.infra.ModelProvider$2 -> com.agynamix.simidude.e.h:
+    java.util.List val$connectedClients -> a
+    com.agynamix.simidude.remote.RemoteConnector val$remoteConnector -> b
+    com.agynamix.simidude.source.SourceDataStub val$sourceDataStub -> c
+    void run() -> run
+com.agynamix.simidude.infra.SimidudeUtils -> com.agynamix.simidude.e.f:
+    int currentModifierKey -> a
+    void launchDefaultImageEditor(java.io.File) -> a
+    void launchDefaultTextEditor(java.io.File) -> b
+    void launchDefaultFileBowser(com.agynamix.simidude.source.impl.FileSourceData) -> a
+    void findAndlaunchApplication(java.lang.String,java.lang.String) -> a
+    org.eclipse.swt.program.Program findProgram(java.lang.String) -> a
+    void launchURI(com.agynamix.simidude.source.impl.TextSourceData) -> a
+    void keyPressed(int) -> a
+    void keyReleased(int) -> b
+    boolean isModifierKeyPressed() -> a
+    boolean isSupportedModifierKey(int) -> d
+    java.lang.String getKeyCodeName(int) -> c
+com.agynamix.simidude.remote.CompareSourceDataStubListsCommand -> com.agynamix.simidude.b.l:
+com.agynamix.simidude.remote.CompareSourceDataStubListsResult -> com.agynamix.simidude.b.j:
+com.agynamix.simidude.remote.ContentsLoaderException -> com.agynamix.simidude.b.n:
+com.agynamix.simidude.remote.RemoteConnector -> com.agynamix.simidude.b.k:
+    com.agynamix.platform.net.Connector connector -> a
+    com.agynamix.simidude.remote.SourceDataSynchronizer sourceDataSynchronizer -> b
+    java.util.logging.Logger log -> c
+    void shutdown() -> a
+    void initializeConnector(com.agynamix.simidude.infra.ModelProvider) -> a
+    void establishConnection() -> b
+    void contactPermanentNetworkAddresses() -> c
+    com.agynamix.platform.net.ClientNode requestClientNode(com.agynamix.platform.net.IConnector,java.lang.String,java.lang.Integer) -> a
+    com.agynamix.platform.infra.Tupel getIPAddressAndPort(com.agynamix.platform.net.IConnector,java.lang.String) -> a
+    com.agynamix.platform.net.IConnector getConnector() -> d
+    void sourceDataChanged(com.agynamix.simidude.source.ISourceData) -> a
+    void send(java.util.List,com.agynamix.simidude.source.ISourceData) -> a
+    com.agynamix.platform.infra.Tupel access$000(com.agynamix.simidude.remote.RemoteConnector,com.agynamix.platform.net.IConnector,java.lang.String) -> a
+    com.agynamix.platform.net.ClientNode access$100(com.agynamix.simidude.remote.RemoteConnector,com.agynamix.platform.net.IConnector,java.lang.String,java.lang.Integer) -> a
+com.agynamix.simidude.remote.RemoteConnector$1 -> com.agynamix.simidude.b.b:
+    com.agynamix.simidude.remote.RemoteConnector this$0 -> a
+    void run() -> run
+com.agynamix.simidude.remote.RemoteException -> com.agynamix.simidude.b.c:
+com.agynamix.simidude.remote.RemoteRemoveItemCommand -> com.agynamix.simidude.b.d:
+com.agynamix.simidude.remote.RequestSourceDataContentCommand -> com.agynamix.simidude.b.h:
+com.agynamix.simidude.remote.SourceDataContentsCollector -> com.agynamix.simidude.b.m:
+    com.agynamix.platform.net.ConnectionCtx connectionCtx -> a
+    com.agynamix.simidude.source.impl.FileSourceData fileSourceData -> b
+    java.lang.Runnable attachedCommand -> c
+    void run() -> run
+com.agynamix.simidude.remote.SourceDataContentsCollector$1 -> com.agynamix.simidude.b.i:
+    org.eclipse.core.runtime.IProgressMonitor val$pm -> a
+    com.agynamix.platform.net.ConnectionCtx val$connectionCtx -> b
+    void run() -> run
+com.agynamix.simidude.remote.SourceDataContentsCollector$2 -> com.agynamix.simidude.b.f:
+    org.eclipse.core.runtime.IProgressMonitor val$pm -> a
+    void run() -> run
+com.agynamix.simidude.remote.SourceDataSynchronizer -> com.agynamix.simidude.b.e:
+    java.util.logging.Logger log -> a
+    com.agynamix.simidude.remote.RemoteConnector remoteConnector -> b
+    java.util.List lastRunClientList -> c
+    int callCount -> d
+    boolean shouldStop -> e
+    void run() -> run
+    void synchronizeSourceData(com.agynamix.platform.net.IConnector,com.agynamix.platform.net.ClientNode,java.util.List) -> a
+    java.util.List assembleRemotelyNeededEntries(com.agynamix.simidude.clipboard.SourceDataManager,java.util.List) -> a
+    java.lang.String getId() -> a
+    void shutdown() -> d
+com.agynamix.simidude.remote.TransmitSourceDataStubListsCommand -> com.agynamix.simidude.b.g:
+com.agynamix.simidude.remote.TransportSourceDataCommand -> com.agynamix.simidude.b.a:
+com.agynamix.simidude.source.ISource -> com.agynamix.simidude.c.b:
+    boolean isDataAvailable() -> a
+    com.agynamix.simidude.source.ISourceData[] getData() -> b
+    int getSleepTime() -> c
+    void itemActivated(com.agynamix.simidude.source.ISourceData) -> a
+    void setClipboardMonitorEnabled(boolean) -> a
+    boolean isClipboardMonitorEnabled() -> d
+    boolean isClipboardEmpty() -> e
+com.agynamix.simidude.source.ISourceData -> com.agynamix.simidude.c.i:
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> m
+    java.lang.String getText() -> c
+    java.util.UUID getSenderId() -> k
+    java.util.UUID getSourceId() -> l
+    void setTransportType(com.agynamix.simidude.source.ISourceData$TransportType) -> a
+    com.agynamix.simidude.source.ISourceData$TransportType getTransportType() -> n
+    boolean isCached() -> o
+    com.agynamix.simidude.infra.IContentsCacheInfo getContentsCacheInfo() -> p
+    com.agynamix.simidude.source.ISourceData copy() -> a
+    com.agynamix.simidude.source.ISourceData equalsCopy() -> b
+    com.agynamix.simidude.source.SourceDataStub getStub() -> r
+    java.util.Date getCreationDate() -> q
+com.agynamix.simidude.source.ISourceData$SourceType -> com.agynamix.simidude.c.a:
+    com.agynamix.simidude.source.ISourceData$SourceType TEXT -> a
+    com.agynamix.simidude.source.ISourceData$SourceType FILE -> b
+    com.agynamix.simidude.source.ISourceData$SourceType IMAGE -> c
+    com.agynamix.simidude.source.ISourceData$SourceType[] $VALUES -> d
+    com.agynamix.simidude.source.ISourceData$SourceType[] values() -> values
+    com.agynamix.simidude.source.ISourceData$SourceType valueOf(java.lang.String) -> valueOf
+com.agynamix.simidude.source.ISourceData$TransportType -> com.agynamix.simidude.c.g:
+    com.agynamix.simidude.source.ISourceData$TransportType local -> a
+    com.agynamix.simidude.source.ISourceData$TransportType remote -> b
+    com.agynamix.simidude.source.ISourceData$TransportType[] $VALUES -> c
+    com.agynamix.simidude.source.ISourceData$TransportType[] values() -> values
+    com.agynamix.simidude.source.ISourceData$TransportType valueOf(java.lang.String) -> valueOf
+com.agynamix.simidude.source.ISourceDataListener -> com.agynamix.simidude.c.e:
+    void sourceDataChanged(com.agynamix.simidude.source.ISourceData) -> a
+com.agynamix.simidude.source.SourceDataContents -> com.agynamix.simidude.c.h:
+com.agynamix.simidude.source.SourceDataFactory -> com.agynamix.simidude.c.c:
+    com.agynamix.simidude.infra.ModelProvider modelProvider -> a
+    java.util.logging.Logger log -> b
+    com.agynamix.simidude.source.ISourceData[] createFromDropTarget(org.eclipse.swt.dnd.DropTargetEvent) -> a
+    com.agynamix.simidude.source.ISourceData createFromText(java.lang.String) -> a
+    com.agynamix.simidude.source.ISourceData createFromFile(java.lang.String) -> b
+    com.agynamix.simidude.source.ISourceData createFromImage(org.eclipse.swt.graphics.ImageData) -> a
+    java.util.UUID getSenderId() -> a
+com.agynamix.simidude.source.SourceDataStub -> com.agynamix.simidude.c.d:
+    int hashCode -> a
+    java.util.UUID sourceId -> b
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    java.lang.String toString() -> toString
+com.agynamix.simidude.source.SourceQueueService -> com.agynamix.simidude.c.f:
+    com.agynamix.platform.infra.IQueueManager queueManager -> a
+    java.util.List listeners -> b
+    void addSourceDataListener(com.agynamix.simidude.source.ISourceDataListener) -> a
+    void internalInitialize() -> c
+    void internalRun() -> e
+com.agynamix.simidude.source.impl.AbstractSourceData -> com.agynamix.simidude.c.a.f:
+    java.util.UUID senderId -> a
+    java.util.UUID uuid -> b
+    com.agynamix.simidude.source.ISourceData$SourceType sourceType -> c
+    com.agynamix.simidude.source.ISourceData$TransportType transportType -> d
+    java.util.Date creationDate -> e
+    com.agynamix.simidude.source.SourceDataStub sourceDataStub -> f
+    boolean isProxy -> g
+    com.agynamix.simidude.infra.IContentsCacheInfo contentsCacheInfo -> h
+    java.util.UUID getSenderId() -> k
+    java.util.UUID getSourceId() -> l
+    com.agynamix.simidude.source.ISourceData$SourceType getType() -> m
+    void setTransportType(com.agynamix.simidude.source.ISourceData$TransportType) -> a
+    com.agynamix.simidude.source.ISourceData$TransportType getTransportType() -> n
+    void setProxy(boolean) -> a
+    boolean isCached() -> o
+    void setContentsCacheInfo(com.agynamix.simidude.infra.IContentsCacheInfo) -> a
+    com.agynamix.simidude.infra.IContentsCacheInfo getContentsCacheInfo() -> p
+    java.util.Date getCreationDate() -> q
+    com.agynamix.simidude.source.SourceDataStub getStub() -> r
+com.agynamix.simidude.source.impl.FileSourceData -> com.agynamix.simidude.c.a.a:
+    java.lang.String[] imgExt -> a
+    java.io.File file -> b
+    boolean isDirectory -> c
+    java.lang.String filename -> d
+    boolean isImage -> e
+    com.agynamix.simidude.source.impl.ImageDataWrapper thumbnail -> f
+    int hashCode -> g
+    com.agynamix.simidude.source.ISourceData copy() -> a
+    com.agynamix.simidude.source.ISourceData equalsCopy() -> b
+    java.lang.String toString() -> toString
+    java.lang.String getText() -> c
+    boolean isDirectory() -> d
+    java.lang.String getFilename() -> e
+    java.io.File getFile() -> f
+    java.lang.String getLocalFilename() -> g
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    boolean checkFileIsImage(java.io.File) -> a
+    boolean isImage() -> h
+    org.eclipse.swt.graphics.ImageData getThumbnail() -> i
+    void deleteContents() -> j
+com.agynamix.simidude.source.impl.ImageDataWrapper -> com.agynamix.simidude.c.a.e:
+    int width -> a
+    int height -> b
+    int depth -> d
+    int red -> e
+    int green -> f
+    int blue -> g
+    int scanlinePad -> h
+    byte[] data -> c
+    org.eclipse.swt.graphics.ImageData thumbnail -> i
+    org.eclipse.swt.graphics.ImageData getImageData() -> a
+    org.eclipse.swt.graphics.ImageData getThumbnailImageData() -> b
+com.agynamix.simidude.source.impl.ImageSourceData -> com.agynamix.simidude.c.a.b:
+    com.agynamix.simidude.source.impl.ImageDataWrapper imageDataWrapper -> a
+    java.lang.String imageText -> b
+    int hashCode -> c
+    com.agynamix.simidude.source.ISourceData copy() -> a
+    com.agynamix.simidude.source.ISourceData equalsCopy() -> b
+    org.eclipse.swt.graphics.ImageData getImageData() -> d
+    org.eclipse.swt.graphics.ImageData getThumbnail() -> e
+    java.lang.String getText() -> c
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    void deleteContents() -> f
+com.agynamix.simidude.source.impl.SourceListener -> com.agynamix.simidude.c.a.g:
+    com.agynamix.simidude.source.ISource source -> a
+    com.agynamix.platform.infra.IQueueManager queueManager -> b
+    int sleepTime -> c
+    void internalInitialize() -> c
+    void internalRun() -> e
+com.agynamix.simidude.source.impl.TextSourceData -> com.agynamix.simidude.c.a.d:
+    java.lang.String data -> a
+    com.agynamix.simidude.source.impl.TextSourceData$TextType textType -> b
+    int hashCode -> c
+    com.agynamix.simidude.source.ISourceData copy() -> a
+    com.agynamix.simidude.source.ISourceData equalsCopy() -> b
+    java.lang.String toString() -> toString
+    java.lang.String getText() -> c
+    com.agynamix.simidude.source.impl.TextSourceData$TextType getTextType() -> d
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    void deleteContents() -> e
+com.agynamix.simidude.source.impl.TextSourceData$TextType -> com.agynamix.simidude.c.a.c:
+    com.agynamix.simidude.source.impl.TextSourceData$TextType Text -> a
+    com.agynamix.simidude.source.impl.TextSourceData$TextType URI -> b
+    com.agynamix.simidude.source.impl.TextSourceData$TextType[] $VALUES -> c
+    com.agynamix.simidude.source.impl.TextSourceData$TextType[] values() -> values
+    com.agynamix.simidude.source.impl.TextSourceData$TextType valueOf(java.lang.String) -> valueOf
+swt.snippets.AlternateColumnColorExample -> swt.snippets.AlternateColumnColorExample:
+    swt.snippets.AlternateColumnColorExample$MyModel[] createModel() -> a
+    void main(java.lang.String[]) -> main
+swt.snippets.AlternateColumnColorExample$1 -> swt.snippets.C:
+    boolean even -> a
+    org.eclipse.jface.viewers.TableViewer val$v -> b
+    swt.snippets.AlternateColumnColorExample$OptimizedIndexSearcher val$searcher -> c
+    org.eclipse.swt.graphics.Color getBackground(java.lang.Object) -> getBackground
+    void update(org.eclipse.jface.viewers.ViewerCell) -> update
+swt.snippets.AlternateColumnColorExample$2 -> swt.snippets.u:
+    boolean even -> a
+    org.eclipse.jface.viewers.TableViewer val$v -> b
+    swt.snippets.AlternateColumnColorExample$OptimizedIndexSearcher val$searcher -> c
+    org.eclipse.swt.graphics.Color getBackground(java.lang.Object) -> getBackground
+    void update(org.eclipse.jface.viewers.ViewerCell) -> update
+swt.snippets.AlternateColumnColorExample$3 -> swt.snippets.A:
+    boolean select(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> select
+swt.snippets.AlternateColumnColorExample$4 -> swt.snippets.v:
+    boolean b -> a
+    org.eclipse.jface.viewers.TableViewer val$v -> b
+    org.eclipse.jface.viewers.ViewerFilter val$filter -> c
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.AlternateColumnColorExample$MyContentProvider -> swt.snippets.p:
+    java.lang.Object[] getElements(java.lang.Object) -> getElements
+    void dispose() -> dispose
+    void inputChanged(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> inputChanged
+swt.snippets.AlternateColumnColorExample$MyModel -> swt.snippets.s:
+    int counter -> a
+    java.lang.String toString() -> toString
+swt.snippets.AlternateColumnColorExample$OptimizedIndexSearcher -> swt.snippets.y:
+    int lastIndex -> a
+    boolean isEven(org.eclipse.swt.widgets.TableItem) -> a
+swt.snippets.BroadcastExample -> swt.snippets.BroadcastExample:
+    void main(java.lang.String[]) -> main
+swt.snippets.ClipboardExample -> swt.snippets.ClipboardExample:
+    org.eclipse.swt.dnd.Clipboard clipboard -> a
+    org.eclipse.swt.widgets.Shell shell -> b
+    org.eclipse.swt.widgets.Text copyText -> c
+    org.eclipse.swt.widgets.Text pasteText -> d
+    org.eclipse.swt.widgets.Text copyRtfText -> e
+    org.eclipse.swt.widgets.Text pasteRtfText -> f
+    org.eclipse.swt.widgets.Text copyHtmlText -> g
+    org.eclipse.swt.widgets.Text pasteHtmlText -> h
+    org.eclipse.swt.widgets.Table copyFileTable -> i
+    org.eclipse.swt.widgets.Table pasteFileTable -> j
+    org.eclipse.swt.widgets.Text text -> k
+    org.eclipse.swt.widgets.Combo combo -> l
+    org.eclipse.swt.custom.StyledText styledText -> m
+    org.eclipse.swt.widgets.Label status -> n
+    void main(java.lang.String[]) -> main
+    void open(org.eclipse.swt.widgets.Display) -> a
+swt.snippets.ClipboardExample$1 -> swt.snippets.i:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$10 -> swt.snippets.c:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$11 -> swt.snippets.b:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$12 -> swt.snippets.n:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$13 -> swt.snippets.o:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$14 -> swt.snippets.q:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$15 -> swt.snippets.r:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$16 -> swt.snippets.e:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$17 -> swt.snippets.g:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$18 -> swt.snippets.j:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$19 -> swt.snippets.h:
+    org.eclipse.swt.widgets.List val$list -> a
+    swt.snippets.ClipboardExample this$0 -> b
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$2 -> swt.snippets.f:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$3 -> swt.snippets.t:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$4 -> swt.snippets.F:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$5 -> swt.snippets.z:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$6 -> swt.snippets.x:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$7 -> swt.snippets.l:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$8 -> swt.snippets.m:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ClipboardExample$9 -> swt.snippets.a:
+    swt.snippets.ClipboardExample this$0 -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.ComplexToolbarExample -> swt.snippets.ComplexToolbarExample:
+    org.eclipse.swt.widgets.Display display -> c
+    org.eclipse.swt.widgets.Shell shell -> a
+    org.eclipse.swt.widgets.ToolBar toolBar -> b
+    void main(java.lang.String[]) -> main
+swt.snippets.ComplexToolbarExample$1 -> swt.snippets.w:
+    org.eclipse.swt.widgets.ToolItem val$itemDropDown -> a
+    org.eclipse.swt.widgets.Menu val$menu -> b
+    swt.snippets.ComplexToolbarExample this$0 -> c
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.ComplexToolbarExample$2 -> swt.snippets.D:
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.ComplexToolbarExample$3 -> swt.snippets.E:
+    swt.snippets.ComplexToolbarExample this$0 -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.CustomGradientSelection -> swt.snippets.CustomGradientSelection:
+    void main(java.lang.String[]) -> main
+swt.snippets.CustomGradientSelection$1 -> swt.snippets.H:
+    org.eclipse.swt.widgets.Table val$table -> a
+    org.eclipse.swt.widgets.Display val$display -> b
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.EnableMenuItemsDynamicallyExample -> swt.snippets.EnableMenuItemsDynamicallyExample:
+    void main(java.lang.String[]) -> main
+swt.snippets.EnableMenuItemsDynamicallyExample$1 -> swt.snippets.B:
+    org.eclipse.swt.widgets.Menu val$menu -> a
+    org.eclipse.swt.widgets.Tree val$tree -> b
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.ImageInTableCell -> swt.snippets.ImageInTableCell:
+    void main(java.lang.String[]) -> main
+swt.snippets.ImageInTableCell$1 -> swt.snippets.G:
+    org.eclipse.swt.graphics.Image val$image -> a
+    void handleEvent(org.eclipse.swt.widgets.Event) -> handleEvent
+swt.snippets.InetAddrFinder -> swt.snippets.InetAddrFinder:
+    void main(java.lang.String[]) -> main
+swt.snippets.ListSystemInfo -> swt.snippets.ListSystemInfo:
+    void main(java.lang.String[]) -> main
+swt.snippets.PreferenceTest -> swt.snippets.PreferenceTest:
+    void main(java.lang.String[]) -> main
+swt.snippets.SearchFieldExample -> swt.snippets.SearchFieldExample:
+    void main(java.lang.String[]) -> main
+swt.snippets.SearchFieldExample$1 -> swt.snippets.k:
+    org.eclipse.swt.widgets.Text val$text -> a
+    void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+swt.snippets.SearchFieldExample$2 -> swt.snippets.d:
+    org.eclipse.swt.widgets.Text val$text -> a
+    void widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent) -> widgetDefaultSelected
+swt.snippets.SimpleHttp2 -> swt.snippets.SimpleHttp2:
+    java.net.Socket s -> a
+    java.io.File docRoot -> b
+    java.lang.String canonicalDocRoot -> c
+    int port -> d
+    java.util.Properties typeMap -> e
+    java.lang.String statusCode -> f
+    java.util.Hashtable myHeaders -> g
+    void main(java.lang.String[]) -> main
+    void run() -> run
+    void sendDocument(java.io.DataOutputStream,java.io.File) -> a
+    void sendStatusLine(java.io.DataOutputStream) -> a
+    void setHeader(java.lang.String,java.lang.String) -> a
+    void sendHeader(java.io.DataOutputStream) -> b
+    void sendError(java.lang.String,java.io.DataOutputStream) -> a

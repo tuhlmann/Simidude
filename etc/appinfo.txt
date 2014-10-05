@@ -1,0 +1,11 @@
+Application-Name=Simidude
+Application-Version=1.0.0 beta
+Application-Years=2008, 2009
+Company-Name=AGYNAMIX
+Company-Email=contact@agynamix.de
+Company-WWW=http://www.simidude.com
+Company-Order-Url=http://www.simidude.com/order
+Repository-Revision=26
+Build-Number=12        	
+Build-Time=2008-11-21 19:33:12  
+        
